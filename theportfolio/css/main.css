@@ -1,0 +1,364 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* Main styles */
+
+@font-face {
+    font-family: 'BebasNeue';
+    src: url(BebasNeue.otf);
+}
+@font-face {
+    font-family: 'MyriadPro-Semibold';
+    src: url(MyriadPro-Semibold.otf);
+}
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url(MyriadPro-Regular.otf);
+}
+h2 {
+    color: #d14343;
+    font-size: 40px;
+    padding: 0px 20px;
+    font-family: 'BebasNeue', sans-serif;
+}
+h3 {
+    padding: 10px 0px 5px 20px;
+    color: #8c8c8c;
+    font-size: 24px;
+    font-family: 'BebasNeue', sans-serif;
+}
+body {
+    background: url(../images/bg.jpg);
+    min-width: 640px;
+}
+.main {
+    max-width: 1080px;
+    margin:0 auto;
+}
+/* Header */
+
+header {
+    margin-top: 40px;
+}
+header:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.logo {
+    float: left;
+    text-transform: uppercase;
+}
+.logo span {
+    display: block;
+}
+.name {
+    color: #d14343;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+}
+.logo-text {
+    font-family: 'BebasNeue', sans-serif;
+    font-size: 50px;
+    border-bottom: 4px solid #8c8c8c;
+    color: #8c8c8c;
+}
+.logo a:hover .logo-text {
+    border-color: transparent;
+}
+.logo a {
+    text-decoration: none;
+}
+nav {
+    float: right;
+}
+nav li {
+    display: inline-block;
+    margin-top: 20px;
+}
+nav a {
+    color: #bfbebc;
+    margin-left: 2px;
+    padding: 0 5px;
+    text-decoration: none;
+    font-size: 22px;
+    font-family: 'BebasNeue', sans-serif;
+}
+nav .active, nav a:hover {
+    border-bottom: 2px solid #8c8c8c;
+    color: #8c8c8c;
+}
+/* Hello */
+
+.hello p {
+    text-align: center;
+    color: #8c8c8c;
+    font-size: 60px;
+}
+.hello p:first-child {
+    padding-top: 70px;
+    font-family: 'MyriadPro-Semibold', sans-serif;
+}
+.hello p:last-child {
+    padding-bottom: 70px;
+    font-family: 'MyriadPro-Regular', sans-serif;
+}
+/*About*/
+
+.about:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.about-me {
+    float: left;
+    width: 50%;
+}
+.about-me img {
+    float: left;
+    padding: 20px;
+}
+.about-me p {
+    padding: 20px;
+    color: #8c8c8c;
+    line-height: 1.5;
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+.separate {
+    background: url(../images/separate.jpg) repeat-x;
+    height: 4px;
+    margin: 0 10px;
+}
+.skills {
+    float: left;
+    width: 50%;
+}
+.skills-blocks {
+    float: left;
+    width: 49%;
+    margin-right: 1%;
+}
+.skills-blocks li {
+    background: url(../images/point.jpg) no-repeat 23px 3px;
+    padding-left: 33px;
+    color: #8c8c8c;
+    padding-bottom: 8px;
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+/*My work*/
+
+.my-work {
+    padding-top: 60px;
+}
+.work-header:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.work-header h2 {
+    float: left;
+}
+.work-nav {
+    float: right;
+    margin-right: 10px;
+}
+.work-nav li {
+    display: inline-block;
+    margin-top: 25px;
+}
+.work-nav a {
+    color: #8c8c8c;
+    padding: 0 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+.work-nav .active-work, .work-nav a:hover {
+    color: #dc6565;
+}
+.images {
+    margin: 20px 0;
+    text-align: center;
+}
+.work {
+    display: inline-block;
+    margin: 0 20px 15px 20px;
+    position: relative;
+}
+.work a {
+    display: block;
+    width: 220px;
+    height: 130px;
+    overflow: hidden;
+    background-color: white;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.work:before, .work:after {
+    content: '';
+    position: absolute;
+    width: 10%;
+    height: 70%;
+    top: 5px;
+    left: 15px;
+    z-index: -1;
+    -webkit-box-shadow: -15px 0 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: -15px 0 10px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: -15px 0 10px rgba(0, 0, 0, 0.6);
+    box-shadow: -15px 0 10px rgba(0, 0, 0, 0.6);
+}
+.work:after {
+    left: auto;
+    right: 15px;
+    -webkit-box-shadow: 15px 0 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 15px 0 10px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 15px 0 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 15px 0 10px rgba(0, 0, 0, 0.6);
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    -o-transform: rotate(4deg);
+    transform: rotate(4deg);
+}
+.work:before {
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    -o-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+}
+.work a:hover {
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
+    -o-box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
+}
+figcaption {
+    margin-top: 10px;
+    color: #8c8c8c;
+    font-size: 12px;
+    font-family: Verdana, Geneva, sans-serif;
+}
+/*Contact*/
+
+.contact:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.send {
+    float: left;
+    width: 50%;
+}
+.send-text, .send-email {
+    display: inline-block;
+    width: 45%;
+    padding: 5px 0px 0px 20px;
+}
+.send-message {
+    padding: 10px 10px 0px 20px;
+}
+textarea {
+    width: 100%;
+}
+label {
+    color: #8c8c8c;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+}
+input {
+    border-bottom: 1px solid #bababa;
+    width: 100%;
+}
+button {
+    margin: 20px;
+    font-size: 24px;
+    font-family: 'BebasNeue', sans-serif;
+    color: #ffffff;
+    background: #d67575;
+    width: 100px;
+    height: 36px;
+}
+.other-contact {
+    float: right;
+    width: 50%;
+}
+.map, .info-contact {
+    display: inline-block;
+    padding: 5px 10px;
+}
+dt {
+    padding: 5px 0px;
+    color: #8c8c8c;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+dd {
+    padding: 5px;
+    color: #8c8c8c;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+}
+.info-contact a {
+    color: #dc6565;
+}
+/*Footer*/
+
+footer {
+    margin-bottom: 20px;
+}
+footer p {
+    padding: 10px 20px;
+    color: #8c8c8c;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11px;
+}
+footer a {
+    color: #dc6565;
+}
+footer p, footer ul, footer li {
+    display: inline-block;
+}
+footer ul {
+    padding-right: 20px;
+    float: right;
+}
+footer li {
+    padding: 0 5px;
+}
