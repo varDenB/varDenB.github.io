@@ -37,11 +37,20 @@ table {
 
 body {
     background: #ffffff;
-    min-width: 800px;
+    min-width: 990px;
 }
 .main, .nav-auth, .privacy-policy-soc {
-    max-width: 960px;
+    /*    max-width: 960px; */
+    
+    width: 90%;
     margin: 0 auto;
+}
+.delimiter {
+    margin-top: 40px;
+    border-bottom: 1px dashed #cdcdcc;
+    position: absolute;
+    right: 0;
+    left: 0;
 }
 h1 {
     color: #ec4444;
@@ -185,6 +194,7 @@ nav .active, nav a:hover {
 }
 .search {
     float: right;
+    position: relative;
 }
 .search input[type="search"] {
     margin: 6px 6px 0px 0px;
@@ -249,7 +259,22 @@ nav .active, nav a:hover {
 }
 .products-blocks {
     float: left;
-    width: 25%;
+    width: 23%;
+    margin-right: 1%;
+    border: 1px solid #ededed;
+    border-radius: 3px;
+    position: relative;
+}
+.products-blocks:last-child {
+    margin-right: 0%;
+}
+.products-blocks img {
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+}
+.description {
+    margin: 10px 85px 10px 10px;
 }
 .products-blocks p {
     margin-top: 10px;
@@ -264,6 +289,9 @@ nav .active, nav a:hover {
     display: block;
     clear: both;
     content: '';
+}
+.blog {
+    width: 95%;
 }
 .from-our-blog h3 {
     font-size: 24px;
@@ -291,7 +319,8 @@ nav .active, nav a:hover {
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 .aboutus-twitter p {
-    padding: 0px 15px 20px 0px;
+    padding-bottom: 20px;
+    width: 95%;
 }
 .twit p {
     padding: 5px 0px 10px;
