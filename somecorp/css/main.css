@@ -194,9 +194,9 @@ nav .active, nav a:hover {
 }
 .search {
     float: right;
-    position: relative;
 }
 .search input[type="search"] {
+    float: right;
     margin: 6px 6px 0px 0px;
     width: 225px;
     height: 26px;
@@ -211,8 +211,8 @@ nav .active, nav a:hover {
 }
 .search input[type="submit"] {
     position: absolute;
-    margin-top: -22px;
-    margin-left: 205px;
+    margin-top:11px;
+    margin-left: 200px;
     background: url(../images/search.png) no-repeat;
     border: none;
     outline: none;
