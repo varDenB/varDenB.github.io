@@ -45,8 +45,22 @@ table {
     margin: 20px auto;
 }
 .exercise{
+    background-color: green;
 	display:inline-block;
 	margin:5px;
 	border-radius: 10px;
-	border:5px solid green;
+	/*border:5px solid green;*/
+}
+.timer{
+    max-width: 1048px;
+    margin: 20px auto;
+    text-align: center;
+}
+.timer div{
+    display: inline-block;
+}
+.timer-current span{
+    font-size: 100px;
+    padding-right:50px; 
+
 }
