@@ -1,37 +1,27 @@
 $( document ).ready(function() {
 	var prepareTime=10000;
+	var doTime=45000;
    var buttonStart = document.querySelector('.btn,.btn-start');
    var buttonPause = document.querySelector('.btn,.btn-pause');
    var timer=document.querySelector('.timer-current span');
    var intervalId=null;
    var elapsedTime=0;
-   var a;
    buttonStart.addEventListener('click',startsuperset,false);
 
    function startsuperset(){
-
-   countdown(prepareTime);
-	if(a===true){
-		countdown(50000);
-	}
-
-   }
-   function countdown(time){
-		var startTime = (new Date()).getTime()+time;
+	var startTime = (new Date()).getTime()+prepareTime;
 			intervalId = setInterval(function() {
 				var ticTime = (new Date()).getTime();
 				elapsedTime = (startTime-ticTime);
 				drawTime(elapsedTime);
 				console.log(elapsedTime);
 				if(elapsedTime<=0) {
-				clearInterval(intervalId);
-				intervalId=null;
-				a=true;
+				startTime = (new Date()).getTime()+doTime;
 				}
 			}, 100);
-			
-   }
 
+   }
+  
    function drawTime(elapsedTime) {
    			var sec_num = parseInt(elapsedTime, 10);
 		   	var minutes = Math.floor(parseInt(elapsedTime / 60000)) % 60;
