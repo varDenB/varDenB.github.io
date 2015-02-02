@@ -5,15 +5,13 @@ $( document ).ready(function() {
    var timer=document.querySelector('.timer-current span');
    var intervalId=null;
    var elapsedTime=0;
-   var a;
+   
    buttonStart.addEventListener('click',startsuperset,false);
 
    function startsuperset(){
 
    countdown(prepareTime);
-	if(a===true){
-		countdown(50000);
-	}
+	
 
    }
    function countdown(time){
@@ -26,7 +24,6 @@ $( document ).ready(function() {
 				if(elapsedTime<=0) {
 				clearInterval(intervalId);
 				intervalId=null;
-				a=true;
 				}
 			}, 100);
 			
