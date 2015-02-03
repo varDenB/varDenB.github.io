@@ -8,36 +8,18 @@ $( document ).ready(function() {
    var timer=document.querySelector('.timer-current span');
    var intervalId=null;
    var elapsedTime=0;
-<<<<<<< HEAD
-   
-   buttonStart.addEventListener('click',startsuperset,false);
-
-   function startsuperset(){
-
-   countdown(prepareTime);
-	
-
-   }
-   function countdown(time){
-		var startTime = (new Date()).getTime()+time;
-=======
    buttonStart.addEventListener('click',startSuperSet,false);
  
    function startSuperSet(){
    	var startTime = (new Date()).getTime()+prepareTime;
 	var status='prepareTime';
 	var counter=0;
->>>>>>> origin/master
 			intervalId = setInterval(function() {
 				var ticTime = (new Date()).getTime();
 				elapsedTime = (startTime-ticTime);
 				drawTime(elapsedTime);
 				console.log(elapsedTime);
 				if(elapsedTime<=0) {
-<<<<<<< HEAD
-				clearInterval(intervalId);
-				intervalId=null;
-=======
 				document.getElementById('sound1').play();
 				if(status==='prepareTime'||status==='restTime'&&counter!==3){
 					startTime = (new Date()).getTime()+doTime;
@@ -51,7 +33,6 @@ $( document ).ready(function() {
 					status='restTime';
 					counter=0;
 				}
->>>>>>> origin/master
 				}
 			}, 100);
 
