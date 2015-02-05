@@ -45,8 +45,7 @@ table {
     margin: 20px auto;
 }
 .exercise{
-    background-color: green;
-	display:inline-block;
+    display:inline-block;
 	margin:5px;
 	border-radius: 10px;
 	/*border:5px solid green;*/
