@@ -8,30 +8,41 @@ $( document ).ready(function() {
    var timer=document.querySelector('.timer-current span');
    var intervalId=null;
    var elapsedTime=0;
+   $('.exercise').eq(0).css('border','5px solid yellow');
    buttonStart.addEventListener('click',startSuperSet,false);
  
    function startSuperSet(){
    	var startTime = (new Date()).getTime()+prepareTime;
 	var status='prepareTime';
 	var counter=0;
+	var set=0;
 			intervalId = setInterval(function() {
 				var ticTime = (new Date()).getTime();
 				elapsedTime = (startTime-ticTime);
 				drawTime(elapsedTime);
 				console.log(elapsedTime);
 				if(elapsedTime<=0) {
+				$('.exercise').css('border','none');
 				document.getElementById('sound1').play();
 				if(status==='prepareTime'||status==='restTime'&&counter!==3){
+					$('.exercise').eq((set*3)+counter).css('border','5px solid green');
 					startTime = (new Date()).getTime()+doTime;
 					status='doTime';
 					counter+=1;
 				}else if(status==='doTime'&&counter!==3){
+					$('.exercise').eq((set*3)+counter).css('border','5px solid yellow');
 					startTime = (new Date()).getTime()+restTime;
 					status='restTime';
 				}else{
+					$('.exercise').eq((set*3)+counter).css('border','5px solid yellow');
 					startTime = (new Date()).getTime()+setRestTime;
 					status='restTime';
 					counter=0;
+					set+=1;
+					if(set===3){
+						set=0;
+						$('.exercise').eq(0).css('border','5px solid yellow');
+					}
 				}
 				}
 			}, 100);
