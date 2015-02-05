@@ -12,6 +12,7 @@ $( document ).ready(function() {
    buttonStart.addEventListener('click',startSuperSet,false);
  
    function startSuperSet(){
+   	if(intervalId!==null){return;}
    	var startTime = (new Date()).getTime()+prepareTime;
 	var status='prepareTime';
 	var counter=0;
@@ -46,7 +47,6 @@ $( document ).ready(function() {
 				}
 				}
 			}, 100);
-
    }
 
    function drawTime(elapsedTime) {
