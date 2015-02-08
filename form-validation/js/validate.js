@@ -74,8 +74,10 @@
 	};
 
 	//Проверка поля телефон
-	nodePhone.onkeyup = function(event) {
-		clearTimeout(keyupTimeout);
+	nodePhone.addEventListener('keyup', checkPhone, false);
+	nodePhone.addEventListener('blur', checkPhone, false);
+	function checkPhone(event) {
+	clearTimeout(keyupTimeout);
 		keyupTimeout = setTimeout(function() {
 			if (!/^\+\d{12}$/.test(nodePhone.value)) {
 				validPhone = false;
@@ -90,7 +92,7 @@
 			}
 			submitButton();
 		}, 500);
-	};
+	}
 
 	//Проверка чекбокса согласия со всем     
 	nodeCheckbox.onchange = function(event) {
