@@ -4,7 +4,6 @@
 	var validEmail = false;
 	var validPassword = false;
 	var validPhone = true;
-	var usedEmails = ['author@mail.com', 'foo@mail.com', 'tester@mail.com'];
 	var nodeEmail = document.querySelector('#email');
 	var nodePassword = document.querySelector('#password');
 	var nodePhone = document.querySelector('#phone');
@@ -20,22 +19,27 @@
 
 	function checkEmail(event) {
 		deleteError(nodeEmail.parentNode);
-		var emailBusy = false;
-		for (var i = 0; i < usedEmails.length; i += 1) {
-			if (usedEmails[i] === nodeEmail.value) {
-				emailBusy = true;
-			}
-		}
 		clearTimeout(keyupTimeout);
 		keyupTimeout = setTimeout(function() {
 			if (!/.+@.+\..+/i.test(nodeEmail.value)) {
 				showError(nodeEmail.parentNode, 'Ошибка в email-е. Проверьте наличие символа @ и домена');
 				validEmail = false;
-			} else if (emailBusy === true) {
-				showError(nodeEmail.parentNode, 'Такой email уже занят');
 			} else {
-				deleteError(nodeEmail.parentNode);
-				validEmail = true;
+				var request = new XMLHttpRequest();
+				var STATE_READY = 4;
+				request.open('get', 'https://aqueous-reaches-8130.herokuapp.com/check-email/?email=' + encodeURIComponent(nodeEmail.value), true);
+				request.onreadystatechange = function(response) {
+					if (request.readyState === STATE_READY) {
+						if (JSON.parse(request.responseText).used) {
+							showError(nodeEmail.parentNode, 'Такой email уже занят');
+							validEmail = false;
+						} else {
+							deleteError(nodeEmail.parentNode);
+							validEmail = true;
+						}
+					}
+				};
+				request.send();
 			}
 			if (nodeEmail.value.length === 0) {
 				deleteError(nodeEmail.parentNode);
@@ -76,8 +80,9 @@
 	//Проверка поля телефон
 	nodePhone.addEventListener('keyup', checkPhone, false);
 	nodePhone.addEventListener('blur', checkPhone, false);
+
 	function checkPhone(event) {
-	clearTimeout(keyupTimeout);
+		clearTimeout(keyupTimeout);
 		keyupTimeout = setTimeout(function() {
 			if (!/^\+\d{12}$/.test(nodePhone.value)) {
 				validPhone = false;
