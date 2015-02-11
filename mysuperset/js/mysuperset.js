@@ -14,7 +14,7 @@ $( document ).ready(function() {
 	var set=0;
 
    	$('.exercise').eq(0).css('border','5px solid yellow');
-    buttonStartPause.addEventListener('click',startSuperSet,false);
+    buttonStartPause.addEventListener('click',startPause,false);
     buttonReset.addEventListener('click',reset,false);
 
 
@@ -30,7 +30,7 @@ $( document ).ready(function() {
 		tempElapsedTime=prepareTime;
 	}
    
-   function startSuperSet(){
+   function startPause(){
    	if(intervalId!==null){
    		buttonStartPause.innerHTML = 'Start';
 		tempElapsedTime=elapsedTime;
