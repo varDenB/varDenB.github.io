@@ -86,7 +86,7 @@
 		keyupTimeout = setTimeout(function() {
 			if (!/^\+\d{12}$/.test(nodePhone.value)) {
 				validPhone = false;
-				showError(nodePhone.parentNode, 'Международный формат записи телефона не выдержан');
+				showError(nodePhone.parentNode, 'Неправильно введен номер. Оставьте поле пустым или введите номер в формате +380509993322');
 			} else {
 				validPhone = true;
 				deleteError(nodePhone.parentNode);
