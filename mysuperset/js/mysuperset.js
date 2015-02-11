@@ -3,21 +3,43 @@ $( document ).ready(function() {
 	var doTime=45000;
 	var restTime=15000;
 	var setRestTime=60000;
-   var buttonStart = document.querySelector('.btn,.btn-start');
-   var buttonPause = document.querySelector('.btn,.btn-pause');
-   var timer=document.querySelector('.timer-current span');
-   var intervalId=null;
-   var elapsedTime=0;
-   $('.exercise').eq(0).css('border','5px solid yellow');
-   buttonStart.addEventListener('click',startSuperSet,false);
- 
-   function startSuperSet(){
-   	if(intervalId!==null){return;}
-   	var startTime = (new Date()).getTime()+prepareTime;
+   	var buttonStartPause = document.querySelector('.btn-start');
+   	var buttonReset = document.querySelector('.btn-reset');
+   	var timer=document.querySelector('.timer-current span');
+   	var intervalId=null;
+   	var elapsedTime=0;
+   	var tempElapsedTime=prepareTime;
 	var status='prepareTime';
 	var counter=0;
 	var set=0;
-			intervalId = setInterval(function() {
+
+   	$('.exercise').eq(0).css('border','5px solid yellow');
+    buttonStartPause.addEventListener('click',startSuperSet,false);
+    buttonReset.addEventListener('click',reset,false);
+
+
+    function reset(){
+		clearInterval(intervalId);
+		buttonStartPause.innerHTML = 'Start';
+		intervalId=null;
+		status='prepareTime';
+		counter=0;
+		set=0;
+		elapsedTime=0;
+		drawTime(elapsedTime);
+		tempElapsedTime=prepareTime;
+	}
+   
+   function startSuperSet(){
+   	if(intervalId!==null){
+   		buttonStartPause.innerHTML = 'Start';
+		tempElapsedTime=elapsedTime;
+		clearInterval(intervalId);
+		intervalId=null;
+	}else{
+		startTime = (new Date()).getTime()+tempElapsedTime;
+   		buttonStartPause.innerHTML = 'Pause';
+   		 		intervalId = setInterval(function() {
 				var ticTime = (new Date()).getTime();
 				elapsedTime = (startTime-ticTime);
 				drawTime(elapsedTime);
@@ -48,7 +70,9 @@ $( document ).ready(function() {
 				}
 			}, 100);
    }
+   }
 
+   
    function drawTime(elapsedTime) {
    			var sec_num = parseInt(elapsedTime, 10);
 		   	var minutes = Math.floor(parseInt(elapsedTime / 60000)) % 60;
