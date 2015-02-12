@@ -35,79 +35,60 @@ table {
 }
 /* Main styles */
 
-
-.set{
-	display: block;
+body {
+    background-image: url('../images/bg.jpg');
 }
-.superset{
+.timer-current {
+    color: white;
+}
+.set {
+    display: block;
+}
+.superset {
     text-align: center;
     max-width: 1048px;
     margin: 20px auto;
 }
-.exercise{
-    display:inline-block;
-	margin:5px;
-	border-radius: 10px;
-}
-.timer{
-    max-width: 1048px;
-    margin: 20px auto;
-    text-align: center;
-}
-.timer div{
+.exercise {
     display: inline-block;
+    margin: 5px 10px;
+    background: white;
 }
-.timer-current span{
+.timer {
+    max-width: 1048px;
+    margin: 10px auto;
+    text-align: center;
+}
+.timer div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.timer-current span {
     font-size: 100px;
-    padding-right:50px; 
+}
+.btn {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 30px;
+    margin-left: 30px;
+    padding: 20px 50px 20px 50px;
+    border: solid #000000 2px;
+    text-decoration: none;
 }
 .btn-start {
-   background-color: rgba(50,222,16,1);
-   border: solid 2px rgba(18,166,40,0.99);
-   -webkit-border-radius: 18px;
-      -moz-border-radius: 18px;
-           border-radius: 18px;
-   width: 200px;
-   height: 50px;
-   padding: 25px 0px 0px 0px;
-   display: inline-block;
-   font-size: 26px;
-   line-height: 24px;
-   text-align: center;
-   color: rgba(0,0,0,1);
-   font-weight: bold;
-   text-transform: uppercase;
+    background: #38a62e;
 }
 .btn-start:hover {
-   background-color: rgba(0,255,30,1);
-}
-.btn-start:active {
-   -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-           border-radius: 50px;
+    background: #1fd125;
+    text-decoration: none;
 }
 .btn-reset {
-   background-color: rgba(199,16,16,1);
-   border: solid 2px rgba(153,55,55,1);
-   -webkit-border-radius: 18px;
-      -moz-border-radius: 18px;
-           border-radius: 18px;
-   width: 200px;
-   height: 50px;
-   padding: 25px 0px 0px 0px;
-   display: inline-block;
-   font-size: 26px;
-   line-height: 24px;
-   text-align: center;
-   color: rgba(0,0,0,1);
-   font-weight: bold;
-   text-transform: uppercase;
+    background: #d62424;
 }
 .btn-reset:hover {
-   background-color: rgba(255,8,8,1);
-}
-.btn-reset:active {
-    -webkit-border-radius: 50px;
-      -moz-border-radius: 50px;
-           border-radius: 50px;
+    background: #ff0000;
+    text-decoration: none;
 }

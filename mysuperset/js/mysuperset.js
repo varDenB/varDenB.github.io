@@ -12,8 +12,7 @@ $( document ).ready(function() {
 	var status='prepareTime';
 	var counter=0;
 	var set=0;
-
-   	$('.exercise').eq(0).css('border','5px solid yellow');
+   	$('.exercise').eq(0).css('box-shadow',' inset 0px 0px 50px 50px yellow');
     buttonStartPause.addEventListener('click',startPause,false);
     buttonReset.addEventListener('click',reset,false);
 
@@ -28,6 +27,8 @@ $( document ).ready(function() {
 		elapsedTime=0;
 		drawTime(elapsedTime);
 		tempElapsedTime=prepareTime;
+		$('.exercise').css('box-shadow','none');
+		$('.exercise').eq(0).css('box-shadow',' inset 0px 0px 50px 50px yellow');
 	}
    
    function startPause(){
@@ -45,26 +46,26 @@ $( document ).ready(function() {
 				drawTime(elapsedTime);
 				console.log(elapsedTime);
 				if(elapsedTime<=0) {
-				$('.exercise').css('border','none');
+				$('.exercise').css('box-shadow','none');
 				document.getElementById('sound1').play();
 				if(status==='prepareTime'||status==='restTime'&&counter!==3){
-					$('.exercise').eq((set*3)+counter).css('border','5px solid green');
+					$('.exercise').eq((set*3)+counter).css('box-shadow','inset 0px 0px 50px 50px green');
 					startTime = (new Date()).getTime()+doTime;
 					status='doTime';
 					counter+=1;
 				}else if(status==='doTime'&&counter!==3){
-					$('.exercise').eq((set*3)+counter).css('border','5px solid yellow');
+					$('.exercise').eq((set*3)+counter).css('box-shadow',' inset 0px 0px 50px 50px yellow');
 					startTime = (new Date()).getTime()+restTime;
 					status='restTime';
 				}else{
-					$('.exercise').eq((set*3)+counter).css('border','5px solid yellow');
+					$('.exercise').eq((set*3)+counter).css('box-shadow',' inset 0px 0px 50px 50px yellow');
 					startTime = (new Date()).getTime()+setRestTime;
 					status='restTime';
 					counter=0;
 					set+=1;
 					if(set===3){
 						set=0;
-						$('.exercise').eq(0).css('border','5px solid yellow');
+						$('.exercise').eq(0).css('box-shadow','inset 0px 0px 50px 50px yellow');
 					}
 				}
 				}
