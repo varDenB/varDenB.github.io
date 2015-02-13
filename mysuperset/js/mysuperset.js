@@ -4,8 +4,8 @@ $(document).ready(function() {
 	var SPACE_KEYCODE = 32;
 	var R_KEYCODE = 82;
 	var prepareTime = 10000;
-	var doTime = 40000;
-	var restTime = 10000;
+	var doTime = 45000;
+	var restTime = 15000;
 	var setRestTime = 60000;
 	var buttonStartPause = document.querySelector('.btn-start');
 	var buttonReset = document.querySelector('.btn-reset');
