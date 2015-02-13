@@ -4,8 +4,8 @@ $(document).ready(function() {
 	var SPACE_KEYCODE = 32;
 	var R_KEYCODE = 82;
 	var prepareTime = 10000;
-	var doTime = 45000;
-	var restTime = 15000;
+	var doTime = 40000;
+	var restTime = 10000;
 	var setRestTime = 60000;
 	var buttonStartPause = document.querySelector('.btn-start');
 	var buttonReset = document.querySelector('.btn-reset');
@@ -16,6 +16,7 @@ $(document).ready(function() {
 	var status = 'prepareTime';
 	var counter = 0;
 	var set = 0;
+	var halfset=0;
 
 	$('.exercise').eq(0).css('box-shadow', ' inset 0px 0px 50px 50px yellow');
 	buttonStartPause.addEventListener('click', startPause, false);
@@ -32,13 +33,9 @@ $(document).ready(function() {
 	$('.remove-button').click(function(event) {
 		$('.superset>p').fadeOut();
 	});
-	document.addEventListener('keyup', keyboardControl, false);
+//	document.addEventListener('keyup', keyboardControl, false);
 
 	function reset() {
-		if (intervalId === null) {
-			$('.superset>p').fadeIn();
-			return;
-		}
 		clearInterval(intervalId);
 		buttonStartPause.innerHTML = 'Start';
 		intervalId = null;
@@ -46,11 +43,11 @@ $(document).ready(function() {
 		counter = 0;
 		set = 0;
 		elapsedTime = 0;
+		halfset=0;
 		drawTime(elapsedTime);
 		tempElapsedTime = prepareTime;
 		$('.exercise').css('box-shadow', 'none');
 		$('.exercise').eq(0).css('box-shadow', ' inset 0px 0px 50px 50px yellow');
-		$('.superset>p').fadeIn();
 	}
 
 	function startPause() {
@@ -81,16 +78,23 @@ $(document).ready(function() {
 						startTime = (new Date()).getTime() + restTime;
 						status = 'restTime';
 					} else {
-						$('.exercise').eq((set * 3) + counter).css('box-shadow', ' inset 0px 0px 50px 50px yellow');
 						startTime = (new Date()).getTime() + setRestTime;
 						status = 'restTime';
-						counter = 0;
+						halfset +=1;
+						if (halfset % 2 === 0){
+						$('.exercise').eq((set * 3) + counter).css('box-shadow', ' inset 0px 0px 50px 50px yellow');	
+						counter=0;
 						set += 1;
 						if (set === 3) {
 							set = 0;
+							halfset=0;
 							$('.exercise').eq(0).css('box-shadow', 'inset 0px 0px 50px 50px yellow');
 						}
+					}else{
+					counter = 0;
+					$('.exercise').eq((set * 3) + counter).css('box-shadow', ' inset 0px 0px 50px 50px yellow');
 					}
+				}
 				}
 			}, 100);
 		}
@@ -109,7 +113,7 @@ $(document).ready(function() {
 		var time = minutes + ':' + seconds;
 		timer.innerHTML = time;
 	}
-
+/*
 	function keyboardControl(event) {
 		if (event.keyCode === ESC_KEYCODE) {
 			$('.superset>p').fadeOut();
@@ -121,5 +125,5 @@ $(document).ready(function() {
 			reset();
 		}
 	}
-
+*/
 });
