@@ -49,10 +49,49 @@ body {
     max-width: 1048px;
     margin: 20px auto;
 }
+.superset>p{
+    position:absolute;
+    font-size: 30px;
+    width: 1048px;
+    height: 205px;
+    padding: 20px 30px;
+    background-color: #D3D3D3;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 4px solid #708090;
+    z-index: 1;
+}
+.yellow-text{
+    color: yellow;
+}
+.green-text{
+    color: green;
+}
+.remove-button {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    cursor: pointer;
+    display: block;
+    font-size: 40px;
+    font-family: arial;
+}
 .exercise {
     display: inline-block;
     margin: 5px 10px;
     background: white;
+}
+.exercise p{
+    display: none;
+    width: 300px;
+    padding: 10px;
+    position:absolute;
+    background-color: #D3D3D3;
+    text-align: left;
+    font-size: 20px;
 }
 .timer {
     max-width: 1048px;
@@ -79,16 +118,16 @@ body {
     text-decoration: none;
 }
 .btn-start {
-    background: #38a62e;
+    background: #006400;
 }
 .btn-start:hover {
-    background: #1fd125;
+    background: #228B22;
     text-decoration: none;
 }
 .btn-reset {
-    background: #d62424;
+    background: #8B0000;
 }
 .btn-reset:hover {
-    background: #ff0000;
+    background: #FF0000;
     text-decoration: none;
 }
