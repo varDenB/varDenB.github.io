@@ -33,7 +33,7 @@ $(document).ready(function() {
 	$('.remove-button').click(function(event) {
 		$('.superset>p').fadeOut();
 	});
-//	document.addEventListener('keyup', keyboardControl, false);
+	document.addEventListener('keyup', keyboardControl, false);
 
 	function reset() {
 		clearInterval(intervalId);
@@ -113,8 +113,9 @@ $(document).ready(function() {
 		var time = minutes + ':' + seconds;
 		timer.innerHTML = time;
 	}
-/*
+
 	function keyboardControl(event) {
+		event.preventDefault();
 		if (event.keyCode === ESC_KEYCODE) {
 			$('.superset>p').fadeOut();
 		}
@@ -125,5 +126,5 @@ $(document).ready(function() {
 			reset();
 		}
 	}
-*/
+
 });
