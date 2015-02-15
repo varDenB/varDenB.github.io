@@ -73,11 +73,10 @@ body {
 .remove-button {
     position: absolute;
     top: -5px;
-    right: 5px;
+    right: 0px;
     cursor: pointer;
     display: block;
     font-size: 40px;
-    font-family: arial;
 }
 .exercise {
     display: inline-block;
