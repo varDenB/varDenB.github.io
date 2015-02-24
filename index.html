@@ -1,13 +1,187 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title>Denis Biletskiy Frontend (web) developer</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Colors -->
+	<link rel="stylesheet" href="css/colors/blue.css" title="blue">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/twitter.css">
+    <link rel="stylesheet" href="css/preloader.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/gmap.css">
+	<link rel="stylesheet" href="css/carousel/owl.carousel.css">
+	<link rel="stylesheet" href="css/carousel/owl.theme.css">
+	<link rel="stylesheet" href="css/switcher.css">
+
+	<!-- Google Font link -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	
+</head>
 <body>
-<p>I'm hosted with GitHub Pages!</p>
-<a href="/theportfolio">Theportfolio</a>
-<a href="/somecorp">Somecorp</a>
-<a href="/mysuperset">My Superset</a>
-<a href="/widget-slider">Widget slider</a>
-<a href="/widget-timer">Widget timer</a>
-<a href="/form-validation">Form validation</a>
-<a href="/context-menu">Context menu</a>
+
+	<!-- begin .preloader -->
+    <div class="preloader">
+    	<div class="spinner"></div>
+    </div>
+    <div class="preloader-left"></div>
+    <div class="preloader-right"></div>
+    <!-- end preloader -->
+
+	<!-- begin #main-container -->
+	<div id="main-container">
+		<!-- begin #profile -->
+		<div id="profile" class="profile">
+			<div id="top-profile" class="expand add-expand">
+				<h1>Profile</h1>
+				<img class="small-image icon icon-left fa" src="img/my-avatar.png" alt="Mobile Profile Picture">
+			</div>
+			<div class="main-content-profile">
+				<div class="close-icon-container">
+					<a href="#top-profile" class="close-icon expand-profile"></a>
+				</div>
+				<div class="summary">
+					<img class="big-image" src="img/my-photo.png" alt="Profile Picture">
+				</div>
+				<p class="hi">
+					<span class="dropcap">Hi</span><span class="detail"></span>
+				</p>
+				<div class="button">
+					<a href="#" class="download">Download CV &nbsp;
+						<span class="fa fa-download"></span>
+					</a>
+				</div>
+				<div class="social-container">
+					<ul class="social">
+						<li><a href="#" class="fa fa-facebook"></a></li>
+						<li><a href="#" class="fa fa-twitter"></a></li>
+						<li><a href="#" class="fa fa-dribbble"></a></li>
+						<li><a href="#" class="fa fa-behance"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- end #profile -->
+
+		<!-- begin #features -->
+		<div id="features">
+
+			<!-- begin #resume -->
+			<div id="resume" class="absolute">
+				<div id="top-resume" class="expand add-expand">
+					<h1>Resume</h1>
+					<div class="detail">View My Resume</div>
+					<div class="icon icon-left fa fa-file-o"></div>
+				</div>
+				<div class="main-content">
+					<a href="#top-resume" class="close-icon expand"></a>
+					<h1 class="title">My Resume</h1>
+				</div>
+			</div>
+			<!-- end #resume -->
+
+			<!-- begin #portfolio -->
+			<div id="portfolio" class="absolute">
+				<div id="top-portfolio" class="expand add-expand">
+					<h1>Portfolio</h1>
+					<div class="detail">Watch My Works</div>
+					<div class="icon icon-left fa fa-briefcase"></div>
+				</div>
+				<div class="main-content">
+					<a href="#top-portfolio" class="close-icon expand"></a>
+					<h1 class="title">My Portfolio</h1>
+						<ul id="filter">
+							<li><a class="active" href="#" data-group="all">All</a></li>
+							<li><a href="#" data-group="HTML+CSS">HTML+CSS</a></li>
+							<li><a href="#" data-group="JS">JS</a></li>
+							<a href="/theportfolio">Theportfolio</a>
+							<a href="/somecorp">Somecorp</a>
+							<a href="/mysuperset">My Superset</a>
+							<a href="/widget-slider">Widget slider</a>
+							<a href="/widget-timer">Widget timer</a>
+							<a href="/form-validation">Form validation</a>
+							<a href="/context-menu">Context menu</a>
+						</ul>
+			</div>
+			</div>
+			<!-- end #portfolio -->
+
+			<!-- begin #blog -->
+			<div id="blog" class="absolute">
+				<div id="top-blog" class="expand add-expand">
+					<h1>Blog</h1>
+					<div class="detail">Read My Thoughts</div>
+					<div class="icon icon-left fa fa-pencil"></div>
+				</div>
+				<div class="main-content">
+					<a href="#top-blog" class="close-icon expand"></a>
+				</div>
+			</div>
+			<!-- end #blog -->
+
+			<!-- begin #contact -->
+			<div id="contact" class="absolute">
+				<div id="top-contact" class="expand add-expand">
+					<h1>Contact</h1>
+					<div class="detail">Get in Touch</div>
+					<div class="icon icon-left fa fa-envelope-o"></div>
+				</div>
+				<div class="main-content">
+					<a href="#top-contact" class="close-icon expand"></a>
+					<h1 class="title">Get In Touch</h1>
+					<div class="row">
+						<div class="col-md-6">
+							<h2 class="title">Find Me Here</h2>
+							<section id="cd-google-map">
+								<div id="google-container"></div>
+								<div id="cd-zoom-in"></div>
+								<div id="cd-zoom-out"></div>
+								<address>Kharkiv, Ukraine</address> 
+							</section>
+							<ul class="list">
+								<li><div class="icon fa fa-map-marker"></div>Kharkiv, Ukraine</li>
+								<li><div class="icon fa fa-envelope-o"></div>denis.biletskiy@gmail.com</li>
+								<li><div class="icon fa fa-phone"></div>+380669009242</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- end #contact -->
+
+		</div>
+		<!-- end #features -->
+
+	</div>
+	<!-- end #main-container -->
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>	
+<script src="js/gmap.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=true/false"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/vendor/jquery.typer.js"></script>
+	<!-- JavaScript Files -->
+		
+	<script src="js/switcher.js"></script>
+	<script src="js/vendor/fastclick.js"></script>
+	<script src="js/vendor/jquery.validate.min.js"></script>
+	<script src="js/vendor/jquery.typer.js"></script>
+	<script src="js/vendor/masonry.pkgd.min.js"></script>
+	<script src="js/vendor/jquery.shuffle.min.js"></script>
+	<script src="js/vendor/morphext.min.js"></script>
+	<script src="js/vendor/twitterFetcher.min.js"></script>
+	<script src="js/smoothScrolls.js"></script>
+	
+	
+	
+	
 </body>
 </html>
