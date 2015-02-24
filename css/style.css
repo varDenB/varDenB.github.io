@@ -1435,8 +1435,10 @@ body {
 		right: 0 !important;
 		left: 0 !important;
 		margin-right: 0;
-		border-bottom: 1px solid #999;
 		width: 100%;
+	}
+	.big-image{
+		margin-top: 25% !important; 
 	}
 
 	.profile-blog {
@@ -1445,7 +1447,7 @@ body {
 	}
 
 	#twitter {
-		margin-bottom: 30px
+		margin-bottom: 30px;
 	}
 
 }
