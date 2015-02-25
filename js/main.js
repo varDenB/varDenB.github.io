@@ -6,7 +6,7 @@
 
 		//	FastClick	
 
-	  //  FastClick.attach(document.body);
+	    FastClick.attach(document.body);
 
 		//	Smooth scroll
 
@@ -19,11 +19,11 @@
 
 	    //	Text rotator
 
-	   /* $(".occupation").Morphext({
+	    $(".occupation").Morphext({
 		    animation: "fadeIn",
 		    separator: ",",
 		    speed: 2500
-		});*/
+		});
 
 		// Preloader
 
