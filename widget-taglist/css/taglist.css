@@ -1,0 +1,27 @@
+.w-taglist-mode-switch {
+    border-bottom: 1px dashed #1E90FF;
+    color: #1E90FF;
+    font-size: 20px;
+    cursor: pointer;
+}
+.w-taglist-displaying:after {
+    display: block;
+    clear: both;
+    content: '';
+}
+.w-taglist-displaying {
+    font-size: 25px;
+}
+.w-taglist-input {
+    margin-top: 10px;
+}
+.w-taglist-tag {
+    float: left;
+    margin: 10px 10px;
+}
+.w-taglist-tag-del {
+    border-left: 1px solid #696969;
+    cursor: pointer;
+    padding-left: 7px;
+    margin-left: 7px;
+}
