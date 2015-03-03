@@ -6,35 +6,23 @@
 
 		//	FastClick	
 
-	    FastClick.attach(document.body);
-
-		//	Smooth scroll
-
-		try {
-	        $.browserSelector();
-	          if($("html").hasClass("chrome" || "opera")) {
-	            $.smoothScroll();
-	          }
-	    } catch(err) {}
-
-	   
+		FastClick.attach(document.body);
 
 		// Preloader
 
-      	$(window).load(function() {
-      		$(".preloader").fadeOut("slow", function(){
-      			$("#resume, #blog, #portfolio, #contact").removeClass("absolute");
-      			$(".preloader-left").addClass("slide-left");
-      			$(".preloader-right").addClass("slide-right");
-      			//	Typerjs function - Edit the sentences below
+		$(window).load(function() {
+			$(".preloader").fadeOut("slow", function() {
+				$("#resume, #blog, #portfolio, #contact").removeClass("absolute");
+				$(".preloader-left").addClass("slide-left");
+				$(".preloader-right").addClass("slide-right");
 				$('.hi .detail')
 					.typeTo("I'm Denis. Frontend (web) developer based on Kharkiv, Ukraine. While not coding, i like to play football and going to the workout gym.");
-      		});
+			});
 		});
 
-	    //	Features animation function
+		//	Features animation function
 
-	    $("#profile .expand, #profile .expand-profile").on("click", function() {
+		$("#profile .expand, #profile .expand-profile").on("click", function() {
 			$("#profile").toggleClass("full-height").removeClass("profile");
 			$("#profile .expand").hide();
 		});
@@ -95,9 +83,9 @@
 		//	Skill bars function
 
 		function skillBars() {
-		$('.skill-bar-bg').each(function() {
-			 var skillBarBg = $(this);
-			 skillBarBg.find('.skill-bar').css('width', skillBarBg.attr('data-percent') + '%' );
+			$('.skill-bar-bg').each(function() {
+				var skillBarBg = $(this);
+				skillBarBg.find('.skill-bar').css('width', skillBarBg.attr('data-percent') + '%');
 			});
 		}
 
@@ -106,18 +94,18 @@
 		//	Masonry function
 
 		var masCon = jQuery("#masonry-container");
-			masCon.masonry({
-		  		columnWidth: 0,
-		  		itemSelector: ".masonry-item"
-			});
+		masCon.masonry({
+			columnWidth: 0,
+			itemSelector: ".masonry-item"
+		});
 
 		//	Shuffle function
 
 		masCon.shuffle({
-			itemSelector: ".masonry-item" // the selector for the items in the grid
+			itemSelector: ".masonry-item"
 		});
 
-		$('#filter a').click(function (e) {
+		$('#filter a').click(function(e) {
 			e.preventDefault();
 
 			$('#filter a').removeClass('active');
