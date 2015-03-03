@@ -34,7 +34,7 @@
       			$(".preloader-right").addClass("slide-right");
       			//	Typerjs function - Edit the sentences below
 				$('.hi .detail')
-					.typeTo("I'm Denis. Frontend (web) developer based on Kharkiv, Ukraine.");
+					.typeTo("I'm Denis. Frontend (web) developer based on Kharkiv, Ukraine. While not coding, i like to play football and going to the workout gym.");
       		});
 		});
 
