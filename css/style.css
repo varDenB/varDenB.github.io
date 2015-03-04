@@ -548,23 +548,23 @@ body {
 	color: white;
 }
 
-.masonry-item {
+.shuffle-item {
 	margin: 10px;
 	position: relative;
 	overflow: hidden;
 	border-radius: 3px;
 }
 
-.masonry-item img {
+.shuffle-item img {
 	border-radius: 3px;
 	transition: .3s all ease;
 }
 
-.masonry-item:hover img {
+.shuffle-item:hover img {
 	transform: scale(1.15);
 }
 
-.masonry-item .overlay {
+.shuffle-item .overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -577,7 +577,7 @@ body {
 	z-index: 999;
 }
 
-.masonry-item .overlay h1 {
+.shuffle-item .overlay h1 {
 	font-family: 'Montserrat', serif;
 	text-transform: uppercase;
 	padding-bottom: 15px;
@@ -591,7 +591,7 @@ body {
 	position: relative;
 }
 
-.masonry-item .overlay h4 {
+.shuffle-item .overlay h4 {
 	font-family: 'Montserrat', serif;
 	line-height: 2em;
 	color: rgba(255,255,255,.9);
@@ -603,16 +603,16 @@ body {
 	padding: 0 5px;
 }
 
-.masonry-item .overlay:hover {
+.shuffle-item .overlay:hover {
 	background: rgba(0,0,0,.75);
 }
 
-.masonry-item .overlay:hover h1 {
+.shuffle-item .overlay:hover h1 {
 	left: 0;
 	opacity: 1;
 }
 
-.masonry-item .overlay:hover h4 {
+.shuffle-item .overlay:hover h4 {
 	left: 0;
 	transition: .3s .15s all ease;
 	opacity: 1;
@@ -717,7 +717,7 @@ body {
 		left: -7.5px !important;
 	}
 
-	#masonry-container {
+	#shuffle-container {
 		left: -10px !important;
 	}
 
@@ -731,11 +731,11 @@ body {
 	}
 
 	.blog-item .overlay,
-	.masonry-item .overlay {
+	.shuffle-item .overlay {
 		padding: 80px;
 	}
 
-	.masonry-item .overlay h4 {
+	.shuffle-item .overlay h4 {
 		bottom: 80px;
 	}
 
@@ -873,7 +873,7 @@ body {
 		top: 0;
 	}
 
-	.masonry-item img {
+	.shuffle-item img {
 		width: 100%;
 	}
 
@@ -882,11 +882,11 @@ body {
 	}
 
 	.blog-item .overlay,
-	.masonry-item .overlay {
+	.shuffle-item .overlay {
 		padding: 40px;
 	}
 
-	.masonry-item .overlay h4 {
+	.shuffle-item .overlay h4 {
 		bottom: 40px;
 	}
 
@@ -923,20 +923,20 @@ body {
 @media (max-width: 480px) {
 
 	.blog-item .overlay,
-	.masonry-item .overlay {
+	.shuffle-item .overlay {
 		padding: 20px !important;
 	}
 
-	.masonry-item .overlay h4 {
+	.shuffle-item .overlay h4 {
 		bottom: 20px !important;
 	}
 
 	.blog-item .overlay h1,
-	.masonry-item .overlay h1 {
+	.shuffle-item .overlay h1 {
 		font-size: 20px;
 	}
 
-	.masonry-item .overlay h4 {
+	.shuffle-item .overlay h4 {
 		padding: 0 20px !important;
 		font-size: 16px;
 	}	

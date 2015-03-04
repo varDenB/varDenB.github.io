@@ -91,18 +91,15 @@
 
 		skillBars();
 
-		//	Masonry function
+		
 
-		var masCon = jQuery("#masonry-container");
-		masCon.masonry({
-			columnWidth: 0,
-			itemSelector: ".masonry-item"
-		});
-
+		
 		//	Shuffle function
 
-		masCon.shuffle({
-			itemSelector: ".masonry-item"
+		var shuffleNode = $("#shuffle-container");
+		
+		shuffleNode.shuffle({
+			itemSelector: ".shuffle-item"
 		});
 
 		$('#filter a').click(function(e) {
@@ -113,7 +110,7 @@
 
 			var groupName = $(this).attr('data-group');
 
-			masCon.shuffle('shuffle', groupName);
+			shuffleNode.shuffle('shuffle', groupName);
 		});
 
 		//	CSS Correct
