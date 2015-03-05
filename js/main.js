@@ -1,4 +1,4 @@
-(function($){
+(function($) {
 
 	"use strict";
 
@@ -15,6 +15,7 @@
 				$("#resume, #blog, #portfolio, #contact").removeClass("absolute");
 				$(".preloader-left").addClass("slide-left");
 				$(".preloader-right").addClass("slide-right");
+				shuffleNode.shuffle('shuffle', 'all');
 				$('.hi .detail')
 					.typeTo("I'm Denis. Frontend (web) developer based on Kharkiv, Ukraine. While not coding, i like to play football and going to the workout gym.");
 			});
@@ -91,13 +92,12 @@
 
 		skillBars();
 
-		
 
-		
+
 		//	Shuffle function
 
 		var shuffleNode = $("#shuffle-container");
-		
+
 		shuffleNode.shuffle({
 			itemSelector: ".shuffle-item"
 		});
@@ -107,9 +107,7 @@
 
 			$('#filter a').removeClass('active');
 			$(this).addClass('active');
-
 			var groupName = $(this).attr('data-group');
-
 			shuffleNode.shuffle('shuffle', groupName);
 		});
 
