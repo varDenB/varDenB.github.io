@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Examples JS code</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+    <h3 class="text-center">Примеры решения задач с курса на языке JavaScript</h3>
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">Упростить массив</a>
+                </li>
+                <li><a href="#tab2" data-toggle="tab">Выбрать ключи-значения из объекта</a>
+                </li>
+                <li><a href="#tab3" data-toggle="tab">Преобразовать одномерный массив в двумерный</a>
+                </li>
+				<li><a href="#tab4" data-toggle="tab">Реализовать класс на прототипах</a>
+                </li>
+                <li><a href="#tab5" data-toggle="tab">Объединить несколько функций в одну</a>
+                </li>
+                <li><a href="#tab6" data-toggle="tab">Ключник</a>
+                </li>
+                <li><a href="#tab7" data-toggle="tab">Описать функцию templater</a>
+                </li>
+                <li><a href="#tab8" data-toggle="tab">Найти и исправить объект в структуре</a>
+                </li>
+                <li><a href="#tab9" data-toggle="tab">Преобразовать строку запроса в объект</a>
+                </li>
+                <li><a href="#tab10" data-toggle="tab">Угадайка</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <pre><p class="text-info">Функция должна вернуть массив,состоящий из всех элементов вложенных массивов.
+Глубина вложенности массивов может быть любая.
+Примеры:
+flattern([1, 2, 3, [1, 2, 3]]); // [1, 2, 3, 1, 2, 3]
+flattern(['mama', ['mila'], [], [['ramu']]]); // ['mama', 'mila', 'ramu']
+</p>
+function flatten(array) {
+'use strict';
+	var result = [];
+	(function recursion(array) {
+		for (var i = 0; i < array.length; i += 1) {
+			if (Object.prototype.toString.call(array[i]) === '[object Array]') {
+				recursion(array[i]);
+			} else {
+				result.push(array[i]);
+			}
+		}
+	})(array);
+	return result;
+}
+
+// Используя instanceof и concat для склеивания массива
+function flatten(array) {
+'use strict';
+	var result = [];
+	for (var i = 0; i < array.length; i += 1) {
+		if (array[i] instanceof Array) {
+			result = result.concat(flatten(array[i]));
+		} else {
+			result.push(array[i]);
+		}
+	}
+	return result;
+}</pre>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <pre><p class="text-info">Реализовать функцию pick(obj, keys), которая принимает аргументами 
+объект и массив строк (названия ключей). Возвращает новый объект, 
+куда вошли все ключи, указанные в массиве keys, и соответствующие 
+значения из объекта obj. Если в объекте obj, нет ключа, указанного 
+в массиве keys, в результирующем объекте этот ключ не должен 
+присутствовать.
+Пример:
+var user = {
+    name: 'Sergey',
+    age: 30,
+    email: 'sergey@gmail.com',
+    friends: ['Sveta', 'Artem']
+}
+pick(user, ['name']); // {name: 'Sergey'}
+pick(user, ['name', 'second-name']); // {name: 'Sergey'}
+pick(user, ['name', 'friends']); // {name: 'Sergey', friends:['Sveta', 'Srtem']}
+</p>
+function pick(obj, keys) {
+	'use strict';
+	var resultObj = {};
+	for (var keyObj in obj) {
+		for (var i = 0; i < keys.length; i += 1) {
+			if (keyObj === keys[i]) {
+				resultObj[keyObj] = obj[keyObj];
+			}
+		}
+	}
+	return resultObj;
+}     	
+</pre>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <pre><p class="text-info">Реализовать функцию toMatrix(data, rowSize), которая принимает 
+аргументом массив и число, возвращает новый массив. Число показывает 
+количество элементов в подмассивах, элементы подмассивов беруться 
+из массива data. Оригинальный массив не должен быть изменен.
+Примеры:
+toMatrix([1,2,3,4,5,6,7,8,9], 3); // [[1,2,3], [4,5,6], [7,8,9]]
+toMatrix([1,2,3,4,5,6,7], 3); // [[1,2,3], [4,5,6], [7]]
+toMatrix([1,2,3], 5); // [[1,2,3]]
+toMatrix([], 3); // []</p>
+function toMatrix(data, rowSize) {
+	'use strict';
+	var matrixArr = [];
+	for (var i = 0; i < data.length; i += rowSize) {
+		matrixArr.push(data.slice(i, i + rowSize));
+	}
+	return matrixArr;
+}
+</pre>
+                </div>
+                <div class="tab-pane" id="tab4">
+                    <pre><p class="text-info">Реализовать класс Sequence(arr). Конструктор принимает аргументом
+массив элементов. Имеет методы (описанные в прототипе) go, next, prev.
+Запоминает на каком элементе из массива сейчас находится "указатель".
+
+Метод go(index) возвращает элемент из массива с индексом index,
+или последний элемент массива, если index больше длины массива. 
+Запоминает индекс возвращенного элемента. Метод next() возвращает 
+следующий элемент из массива идущий за запомненным индексом, 
+или первый элемент массива, последний запомненный индекс - индекс 
+последнего элемента. Метод prev() возвращает предыдущий элемент из 
+массива идущий перед запомненным индексом, или первый элемент массива, 
+последний запомненный индекс - индекс последнего элемента.
+Примеры:
+var s1 = new Sequence(['one', 'two', 'three'])
+s1.go(2);  // 'three'
+s1.next(); // 'one'
+s1.next(); // 'two'
+
+var s2 = new Sequence([{name: 'Manya'}, {name:'Valya'}]);
+s2.go(100500); // {name: 'Valya'} последний элемент, так как индекс выходит за границы максимального
+s2.prev(); // {name: 'Manya'}
+s2.prev(); // {name: 'Valya'}</p>
+function Sequence(arr) {
+    'use strict';
+    this.arr = arr;
+    var pointer = pointer || 0;
+    this.pointer = pointer;
+}
+Sequence.prototype.go = function(index) {
+    this.pointer = index;
+    if (index > this.arr.length) {
+        this.pointer = this.arr.length - 1;
+        return this.arr[this.arr.length - 1];
+    } else {
+        return this.arr[index];
+    }
+};
+Sequence.prototype.next = function() {
+    if (this.pointer === this.arr.length - 1) {
+        this.pointer = -1;
+    }
+    this.pointer += 1;
+    return this.arr[this.pointer];
+};
+Sequence.prototype.prev = function() {
+    if (this.pointer === 0) {
+        this.pointer = this.arr.length;
+    }
+    this.pointer -= 1;
+    return this.arr[this.pointer];
+};
+</pre>
+                </div>
+                <div class="tab-pane" id="tab5">
+                    <pre><p class="text-info">Реализовать функцию compose, которая принимает аргументами любое 
+количество функций, и возвращает функцию, которая при вызове вызовет 
+все функции, которые compose получила аргументом.
+Примеры:
+function log1() {console.log(111)};
+function log2() {console.log(222)};
+function log3() {console.log(333)};
+var logAll = compose(log1, log2, log3);
+logAll(); // 111
+          // 222
+          // 333</p>
+function compose() {
+	'use strict';
+	var arr = [];
+	for (var i = 0; i < arguments.length; i += 1) {
+		arr.push(arguments[i]);
+	}
+	return function() {
+		for (var i = 0; i < arr.length; i += 1) {
+			arr[i]();
+		}
+	};
+}
+
+//Можно упростить код сразу присвоив массиву масивоподобный обьект arguments
+function compose() {
+	'use strict';
+	var args = arguments;
+	return function() {
+		for (var i = 0; i < args.length; i += 1) {
+			args[i]();
+		}
+	};
+}
+
+//Вариант решения на вебинаре используя метод массива
+function compose() {
+	var args = arguments;
+	return function() {
+		Array.prototype.forEach.call(args, function(funcToCall) {
+			funcToCall();
+		});
+	};
+}
+</pre>
+                </div>
+                <div class="tab-pane" id="tab6">
+                    <pre><p class="text-info">Релизовать функцию createKeeper(), которая возвращает объект 
+с 2 методами put(key, value) и get(key). Метод get(key) должен 
+возвращать данные, которые были сохранены с помощью метода put, 
+если вызывается с тем-же значением key, что и put.Ключами могут 
+быть как объекты, так и примитивы, про NaN не задумываться.Если
+ put был вызван с таким ключом, с которым уже был вызван ранее, 
+ старое значение перезатирается новым. Доступ к ключам и значениями
+  должен быть возможен только через методы put и get.
+Примеры:
+var keeper = createKeeper();
+var key1 = {};
+var key2 = {};
+var key1Copy = key1;
+
+keeper.put(key1, 999)
+keeper.put(key2, [1,2,3])
+console.log(keeper.get(key1)); // 999
+console.log(keeper.get(key2)); // [1,2,3]
+console.log(keeper.get(key1Copy)); // 999
+console.log(keeper.get({})); // null
+keeper.put(key1, key2);
+console.log(keeper.get(key1Copy) === key2); // true</p>
+function createKeeper() {
+	'use strict';
+	var arrOfKeys = [];
+	var arrOfValues = [];
+	return {
+		put: function(key, value) {
+			if (arrOfKeys.indexOf(key) === -1) {
+				arrOfKeys.push(key);
+				arrOfValues.push(value);
+			}
+			for (var i = 0; i < arrOfKeys.length; i += 1) {
+				if (arrOfKeys[i] === key) {
+					arrOfValues[i] = value;
+				}
+			}
+		},
+		get: function(key) {
+			for (var i = 0; i < arrOfKeys.length; i += 1) {
+				if (arrOfKeys[i] === key) {
+					return arrOfValues[i];
+				}
+			}
+			return null;
+		}
+	};
+}
+</pre>
+                </div>
+                <div class="tab-pane" id="tab7">
+                    <pre><p class="text-info">Функция, принимает аргументом строку и объект.
+Заменяет все вхождения подстрок вида ${STRING} значениями из 
+объекта с ключом STRING. Пример использования:
+ПРимер:
+templater('${who} ${action} ${what}', {
+ who: 'mama',
+ action: 'mila',
+ what: 'ramu'
+}); // 'mama mila ramu'</p>
+function templater(templateString, dataObj) {
+	'use strict';
+	var result = '';
+	var tempArr = templateString.split(/[$}]/);
+	for (var i = 0; i < tempArr.length; i += 1) {
+		if (tempArr[i].charAt(0) === '{') {
+			tempArr[i] = tempArr[i].substring(1);
+			for (var key in dataObj) {
+				if (key === tempArr[i]) {
+					result += dataObj[key];
+				}
+			}
+		} else {
+			result += tempArr[i];
+		}
+	}
+	return result;
+}
+</pre>
+                </div>
+                <div class="tab-pane" id="tab8">
+                    <pre><p class="text-info">Есть структура вида:
+
+[{
+    delta: 5,
+    value: 5
+}, {
+    delta: -3,
+    value: 2
+}, {
+    delta: 5,
+    value: 7
+}, {
+    delta: 0,
+    value: 7
+}]
+Она подчиняется следющему правилу: каждый последующий объект массива 
+содержит объект со свойствами delta и value. delta - разница значений 
+value с предыдущим объектом.
+
+У тебя есть экземпляр структуры, и достоверно известно, что один 
+(и только один) из элементов имеет неверное значение delta и value, 
+и что этот элемент не является ни первым, ни последним. 
+Необходимо написать функцию fixStruct(struct), которая изменяет 
+неверное значение таким образом, чтобы его delta и value снова 
+подчинялись правилу, описанному выше.</p>
+function fixStruct(struct) {
+    'use strict';
+    for (var i = 1; i < struct.length; i += 1) {
+        if (struct[i].value - struct[i - 1].value !== struct[i].delta) {
+            struct[i].value = struct[i + 1].value - struct[i + 1].delta;
+            struct[i].delta = struct[i].value - struct[i - 1].value;
+        }
+    }
+}
+</pre>
+                </div>
+                <div class="tab-pane" id="tab9">
+                    <pre><p class="text-info">Реализуй функцию queryStringToObject(queryString), которая возвращает 
+объект. 
+Распознавать следующие типы данных: числа, строки, булевы. 
+Помни, что некоторые символы query string могут быть закодированы.
+Пример работы:
+queryStringToObject("user=true"); // {user: true}
+queryStringToObject("user=true&age=29"); // {user: true, age: 29}
+queryStringToObject("user=true&age=29&name=Evgen"); // {user: true, age: 29, name: "Evgen"}</p>
+function queryStringToObject(queryString) {
+	'use strict';
+	var resultObj = {};
+	var arrOfWords = [];
+	if (queryString.length !== 0) {
+		arrOfWords = queryString.split(/[=&]/);
+		for (var i = 0; i < arrOfWords.length; i += 1) {
+			arrOfWords[i] = decodeURIComponent(arrOfWords[i]);
+			if (arrOfWords[i] === 'true') {
+				arrOfWords[i] = true;
+			} else if (arrOfWords[i] === 'false') {
+				arrOfWords[i] = false;
+			} else if (!Number.isNaN(parseInt(arrOfWords[i]))) {
+				arrOfWords[i] = parseInt(arrOfWords[i]);
+			}
+		}
+		for (i = 0; i < arrOfWords.length; i += 2) {
+			resultObj[arrOfWords[i]] = arrOfWords[i + 1];
+		}
+	}
+	return resultObj;
+}
+</pre>
+                </div>
+                <div class="tab-pane" id="tab10">
+                    <pre><p class="text-info">Напиши программу, которая загадывает целое число до 50, и просит 
+пользователя число отгадать. Каждый раз, когда пользовател вводит 
+число, которое ближе к ответу, чем предыдущее предположение 
+пользователя, программа выдает prompt для следующего числа с 
+сообщением "теплее", если новое предположение отдаляется от 
+задуманного числа, программа выводит prompt с сообщением "холоднее". 
+После отгадывания числа программа с помощью alert показывает 
+количество попыток, за сколько было угадано число. Максимальное 
+число попыток: 10 (должно быть настраиваемым). После этого игра 
+считается проиграной, о чем сообщается в alert окошке.</p>
+var numberOfRetries = 10;
+var programChoice;
+var programAnswer;
+var userInput;
+var userChoice;
+var previusUserChoice;
+programChoice = Math.floor(Math.random() * 50 + 1);
+programAnswer = 'Я загадала число от 0 до 50.Угадывай, пользователь';
+for (var i = 1; i <= numberOfRetries; i += 1) {
+	userInput = prompt(programAnswer);
+	userChoice = parseInt(userInput, 10);
+	if (userChoice === programChoice) {
+		alert('Угадал, хитрец, за ' + i + ' попыток');
+		i = numberOfRetries;
+	} else if (i === 1) {
+		programAnswer = 'Не угадал, попробуй еще';
+	} else if (Math.abs(programChoice - userChoice) < Math.abs(programChoice - previusUserChoice)) {
+		programAnswer = 'Теплее';
+	} else {
+		programAnswer = 'Холоднее';
+	}
+	if (i === numberOfRetries && userChoice !== programChoice) {
+		alert('Вы проиграли использовав все ' + numberOfRetries + ' своих попыток');
+	}
+	previusUserChoice = userChoice;
+}
+</pre>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
