@@ -36,6 +36,12 @@
                 </li>
                 <li><a href="#tab10" data-toggle="tab">Угадайка</a>
                 </li>
+                <li><a href="#tab11" data-toggle="tab">Релизовать функцию возвращаюшую узел списка</a>
+                </li>
+                <li><a href="#tab12" data-toggle="tab">Ссылки ведущие на внешние ресурсы</a>
+                </li>
+                <li><a href="#tab13" data-toggle="tab">Массив названий тегов на странице</a>
+                </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
@@ -415,6 +421,91 @@ for (var i = 1; i <= numberOfRetries; i += 1) {
 	}
 	previusUserChoice = userChoice;
 }
+</pre>
+                </div>
+                <div class="tab-pane" id="tab11">
+                    <pre><p class="text-info">Релизовать функцию createList(listData, listContainer, 
+itemContainer), возвращаюшую узел списка. Использовать innerHTML
+ельзя. Второй и третий аргументы не обязательные. 
+Значения по умолчанию для них - ul и li. listData - массив. 
+listData Может содержать как элементы (текст), так и массивы 
+элементов. Глубина вложенности массивов любая.
+
+Примеры возвращаемых узлов:
+createList(['мясо', 'рыба']) 
+createList(['мясо', ['яблоки', 'бананы']], 'ol') 
+createList(['мясо', ['яблоки', 'бананы']], 'div', 'div') 
+</p>
+function createList(listData, listContainer, itemContainer) {
+	'use strict';
+	listContainer = listContainer || 'ul';
+	itemContainer = itemContainer || 'li';
+	var list = document.createElement(listContainer);
+	var item;
+	for (var i = 0; i < listData.length; i += 1) {
+		item = document.createElement(itemContainer);
+		if (isArray(listData[i])) {
+			item.appendChild(createList(listData[i], listContainer, itemContainer));
+		} else {
+			item.appendChild(document.createTextNode(listData[i]));
+		}
+		list.appendChild(item);
+	}
+	document.body.appendChild(list);
+	return list;
+}
+function isArray(object) {
+	return Object.prototype.toString.call(object) === '[object Array]';
+}
+</pre>
+                </div>
+                <div class="tab-pane" id="tab12">
+                    <pre><p class="text-info">Реализовать функцию getExternalLinks,
+которая возвращает массив ссылок, ведущих на внешние ресурсы
+(то есть не на тот домен,где запускакется скрипт)
+</p>
+function getExternalLinks() {
+	'use strict';
+	var arr = [];
+	for (var i = 0; i < document.links.length; i += 1) {
+		if (window.location.hostname !== document.links[i].hostname) {
+			arr.push(document.links[i].href);
+		}
+	}
+	return arr;
+}
+getExternalLinks();
+</pre>
+                </div>
+                <div class="tab-pane" id="tab13">
+                    <pre><p class="text-info">Реализовать функцию getUniqueTags, которая возвращает 
+массив названий тегов, присутствуещих на странице. 
+В массиве каждого типа тег должен присутствовать 
+в единственном экземпляре.
+</p>
+function getUniqueTags() {
+	'use strict';
+	var tempArr = [];
+	var uniqueTags = [];
+	var nodes = document.getElementsByTagName('*');
+	for (var i = 0; i < nodes.length; i += 1) {
+		tempArr.push(nodes[i].nodeName);
+	}
+	uniqueTags = getUnique(tempArr);
+	return uniqueTags;
+}
+
+function getUnique(list) {
+	'use strict';
+	var resultArr = [];
+	for (var i = 0; i < list.length; i += 1) {
+		if (resultArr.indexOf(list[i]) === -1) {
+			resultArr.push(list[i]);
+		}
+	}
+	return resultArr;
+}
+getUniqueTags();
 </pre>
                 </div>
             </div>
