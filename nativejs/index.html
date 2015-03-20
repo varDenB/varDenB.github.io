@@ -42,6 +42,8 @@
                 </li>
                 <li><a href="#tab13" data-toggle="tab">Массив названий тегов на странице</a>
                 </li>
+                <li><a href="#tab14" data-toggle="tab">Explosm.net скрипт динамической подгрузки</a>
+                </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="tab1">
@@ -506,6 +508,50 @@ function getUnique(list) {
 	return resultArr;
 }
 getUniqueTags();
+</pre>
+                </div>
+                <div class="tab-pane" id="tab14">
+                    <pre><p class="text-info">Реализовать скрипт динамической подгрузки комиксов для сайта http://explosm.net/40. 
+При прокрутке страницы к нижнему краю последнего видимого комикса, подгружаются новые 
+изображения следующих комиксов (2 штуки) и добавляются с обязательной анимацией 
+(на ваш вкус можно проявлять, можно выезжать) под последним видимым комиксом. В итоге 
+должен получиться эффект "бесконечной страницы". Иногда среди комиксов встречаются видео, 
+они не должны добавляться в общий поток.
+</p>
+'use strict';
+$(document).ready(function() {
+	var inProgress = false;
+	var previousComicURL = $('.previous-comic').attr('href');
+	if ($(window).scrollTop() + $(window).height() >= $('#comic-container').height() && !inProgress) {
+		appendPreviousComic();
+	}
+	$(window).scroll(function() {
+	if ($(window).scrollTop() + $(window).height() >= $('#comic-container').height() && !inProgress) {
+			appendPreviousComic();
+		}
+	});
+
+	function appendPreviousComic() {
+		$.ajax({
+			type: 'get',
+			url: 'http://explosm.net/' + previousComicURL,
+			beforeSend: function() {
+				inProgress = true;
+			},
+			success: function(response) {
+				var previousComicNode = $(response).find('#main-comic');
+				previousComicURL = $(response).find('.previous-comic').attr('href');
+				previousComicNode.appendTo($('#comic-container')).css("display", "none");
+				previousComicNode.fadeIn(2000);
+				inProgress = false;
+			if ($(window).scrollTop() + $(window).height() >= $('#comic-container').height()) {
+					appendPreviousComic();
+				}
+			}
+		});
+	}
+	
+});
 </pre>
                 </div>
             </div>
