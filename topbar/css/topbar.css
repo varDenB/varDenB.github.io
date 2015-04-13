@@ -3,28 +3,32 @@
 	color: #FFFFFF;
 	height: 34px;
 	font-size: 16px;
+	position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
-.topbar-search{
+.topbar-offers > span{
 	vertical-align:middle; 
 	padding:0 20px;
 	background-color: #CC6600;
 	border: 5px solid #CC6600; 
 	border-radius: 5px;
 }
-.topbar-offers button{
+.topbar button{
 	background-color:#E7E7E7;
 }
-.topbar-offers .dropdown-menu{
+.topbar .dropdown-menu{
 	background-color: #006699;
 	color:#E7E7E7;
 }
-.topbar-offers .dropdown-menu img{
+.topbar .dropdown-menu img{
 	padding: 0 5px;
 }
 .topbar-text{
 	font-size: 22px;
 }
-
 .topbar-controls span{
 	cursor: pointer;
 	font-size: 24px;
