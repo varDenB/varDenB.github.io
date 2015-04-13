@@ -5,45 +5,49 @@
     <meta charset="UTF-8">
     <title>Topbar</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/topbar.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="row" style="border:1px solid black">
-        <div class="col-md-4 col-sm-6 col-xs-6">
-            <span>Logo</span>
-            <span>All includive offers</span>
+<div class="topbar">
+    <div class="row">
+        <div class="col-md-5 col-sm-6 col-xs-6 topbar-offers">
+            <img src="" alt="Logo" width='50px' height='30px'>
+            <span class='topbar-search'>All includive offers</span>
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="badge">8 </span> Offers<span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li><img src="" alt="Logo" width='50px' height='20px'class="img-thumbnail">Tripcentral</li>
+                    <li><img src="" alt="Logo" width='' height=''>Tripcentral</li>
                     <li class="divider"></li>
-                    <li><img src="" alt="Logo" width='50px' height='20px'class="img-thumbnail">Redtag</li>
+                    <li><img src="img/redtag.jpg" alt="Logo" width='173px' height='40px'></li>
                     <li class="divider"></li>
-                    <li><img src="" alt="Logo" width='50px' height='20px'class="img-thumbnail">Sunwing</li>
+                    <li><img src="img/sunwing.jpg" alt="Logo" width='133px' height='40px'></li>
                     <li class="divider"></li>
-                    <li><img src="" alt="Logo" width='30px' height='20px'class="img-thumbnail">Signaturevacations</li>
+                    <li><img src="" alt="Logo" width='30px' height='20px'>Signaturevacations</li>
                     <li class="divider"></li>
-                    <li><img src="" alt="Logo" width='50px' height='20px'class="img-thumbnail">Searstravel</li>
+                    <li><img src="" alt="Logo" width='50px' height='20px'>Searstravel</li>
                     <li class="divider"></li>
-                    <li><img src="" alt="Logo" width='50px' height='20px'class="img-thumbnail">Selloffvacations</li>
+                    <li><img src="img/selloffvacations.jpg" alt="Logo" width='40px' height='30px'>Selloffvacations</li>
                     <li class="divider"></li>
-                    <li><img src="" alt="Logo" width='50px' height='20px'class="img-thumbnail">Flightcentre</li>
+                    <li><img src="" alt="Logo" width='50px' height='20px'>Flightcentre</li>
                     <li class="divider"></li>
-                    <li><img src="" alt="Logo" width='50px' height='20px'class="img-thumbnail">Itravel2000</li>
+                    <li><img src="img/itravel.jpg" alt="Logo" width='60px' height='20px'>Itravel2000</li>
                 </ul>
             </div>
         </div>
         <div class="col-md-4 col-sm-4 col-xs-4">
-            <span class="text-left">We've got the lowest price</span>
+            <span class='text-right topbar-text'>We've got the lowest price</span>
         </div>
-        <div class="col-md-4 col-sm-2 col-xs-2 text-right">
+        <div class="col-md-3 col-sm-2 col-xs-2 text-right topbar-controls">
             <span class="glyphicon glyphicon-cog"></span>
             <span class="glyphicon glyphicon-question-sign"></span>
             <span class="glyphicon glyphicon-remove-circle"></span>
         </div>
+    </div>
+
     </div>
 </body>
 
