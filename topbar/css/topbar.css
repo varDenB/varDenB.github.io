@@ -1,48 +1,47 @@
-.topbar{
-	background-color: #006699;
-	color: #FFFFFF;
-	height: 34px;
-	font-size: 16px;
-	position: fixed;
+.topbar {
+    background-color: #006699;
+    color: #FFFFFF;
+    height: 34px;
+    font-size: 16px;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
 }
-.topbar-offers div,.topbar-completitors div{
-	display: inline-block;
+.topbar-offers div, .topbar-completitors div {
+    display: inline-block;
 }
-.topbar-h-offer{
-	vertical-align:middle;
-	padding:0 20px;
-	background-color: #CC6600;
-	border: 5px solid #CC6600; 
-	border-radius: 5px;
+.topbar-h-offer {
+    vertical-align: middle;
+    padding: 0 20px;
+    background-color: #CC6600;
+    border: 5px solid #CC6600;
+    border-radius: 5px;
 }
-.topbar-completitors{
-	padding-top:6px;
+.topbar-completitors {
+    padding-top: 6px;
 }
-.topbar .dropdown-toggle{
-	color: #FFFFFF;
+.topbar .dropdown-toggle {
+    color: #FFFFFF;
 }
-.topbar .dropdown-toggle .text{
-	padding-left: 5px;
+.topbar .dropdown-toggle .text {
+    padding-left: 5px;
 }
-.topbar .badge{
-	background-color:#CC6600;
+.topbar .badge {
+    background-color: #CC6600;
 }
-.topbar .dropdown{
-	padding-left: 10px;
+.topbar .dropdown {
+    padding-left: 10px;
 }
-
-.topbar .dropdown-menu{
-	background-color: #F2F2F2;
+.topbar .dropdown-menu {
+    background-color: #F2F2F2;
 }
-.topbar .dropdown-menu img{
-	padding: 0 5px;
+.topbar .dropdown-menu .title {
+    padding-left: 5px;
 }
-.topbar-controls span{
-	cursor: pointer;
-	font-size: 24px;
-	padding:4px 3px 0;
+.topbar-controls span {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 4px 3px 0;
 }
