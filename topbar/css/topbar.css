@@ -9,7 +9,7 @@
     bottom: 0;
     right: 0;
 }
-.topbar-offers div, .topbar-completitors div {
+.topbar-offers div, .topbar-answer div {
     display: inline-block;
 }
 .topbar-h-offer {
@@ -18,9 +18,6 @@
     background-color: #CC6600;
     border: 5px solid #CC6600;
     border-radius: 5px;
-}
-.topbar-completitors {
-    padding-top: 6px;
 }
 .topbar .dropdown-toggle {
     color: #FFFFFF;
@@ -40,8 +37,15 @@
 .topbar .dropdown-menu .title {
     padding-left: 5px;
 }
+.topbar-controls img {
+    vertical-align: top;
+}
 .topbar-controls span {
     cursor: pointer;
     font-size: 24px;
     padding: 4px 3px 0;
+}
+.topbar-answer {
+    display: none;
+    padding-top: 6px;
 }
