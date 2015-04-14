@@ -9,25 +9,37 @@
     bottom: 0;
     right: 0;
 }
-.topbar-offers > span{
-	vertical-align:middle; 
+.topbar-offers div,.topbar-completitors div{
+	display: inline-block;
+}
+.topbar-h-offer{
+	vertical-align:middle;
 	padding:0 20px;
 	background-color: #CC6600;
 	border: 5px solid #CC6600; 
 	border-radius: 5px;
 }
-.topbar button{
-	background-color:#E7E7E7;
+.topbar-completitors{
+	padding-top:6px;
 }
+.topbar .dropdown-toggle{
+	color: #FFFFFF;
+}
+.topbar .dropdown-toggle .text{
+	padding-left: 5px;
+}
+.topbar .badge{
+	background-color:#CC6600;
+}
+.topbar .dropdown{
+	padding-left: 10px;
+}
+
 .topbar .dropdown-menu{
-	background-color: #006699;
-	color:#E7E7E7;
+	background-color: #F2F2F2;
 }
 .topbar .dropdown-menu img{
 	padding: 0 5px;
-}
-.topbar-text{
-	font-size: 22px;
 }
 .topbar-controls span{
 	cursor: pointer;
