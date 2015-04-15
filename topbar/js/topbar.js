@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-	var $topbarhelp = $(".topbar-help");
 	var $questionSign = $('.topbar .glyphicon-question-sign');
 	var $hOffer = $('.topbar-h-offer');
 	var $detailOffer = $('.topbar-detail-offer');
@@ -8,20 +7,20 @@ $(document).ready(function() {
 	var $detailCompetitors = $('.topbar-detail-competitors');
 	var $socialLink = $('.topbar .social-popover');
 	var $controls = $('.topbar .glyphicon-cog');
-	var $popovers = [$hOffer, $detailOffer, $hCompetitors, $detailCompetitors,$socialLink, $controls];
+	var $popovers = [$hOffer, $detailOffer, $hCompetitors, $detailCompetitors, $socialLink, $controls];
 	var count = 0;
 	var autoShowPopovers;
 
 	$(".topbar .glyphicon-remove-circle").click(function() {
 		$(".topbar").css("display", "none");
 	});
-	$('.glyphicon-question-sign').popover('show');
+	$questionSign.popover('show');
 
-	$(".topbar .glyphicon-question-sign").click(function() {
+	$questionSign.click(function() {
 
 		$('.topbar .blur').css('display', 'block');
 		$('.topbar .remove-help').css('display', 'block');
-		$('.glyphicon-question-sign').popover('hide');
+		$questionSign.popover('hide');
 
 		$popovers[count].popover('show');
 		autoShowPopovers = setInterval(function() {
