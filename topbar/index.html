@@ -18,11 +18,11 @@
                 <div>
                     <img src="img/logo.png" alt="Logo" width='34px' height='34px'>
                 </div>
-                <div class="topbar-h-offer">
+                <div class="topbar-h-offer" data-container="body" data-toggle="popover" data-trigger='manual' data-placement="bottom" data-original-title="Offers" data-content="The number of available additional offers">
                     <span>5 additional offers available</span>
                 </div>
                 <div class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="badge">5</span><span class="text">Offers</span><span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="badge">5</span><span class="text topbar-detail-offer" data-container="body" data-toggle="popover" data-trigger='manual' data-placement="bottom" data-original-title="Offers" data-content="View the details offers and save money">Offers</span><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#"><span class="profit">$10</span><span class="text-offer">Get extra $10 when you book 5-stars resort</span></a>
                         </li>
@@ -47,10 +47,10 @@
                 </div>
                 <div class="topbar-answer">
                     <div>
-                        <span>We've got the lowest price</span>
+                        <span class="topbar-h-competitors" data-container="body" data-toggle="popover" data-trigger='manual' data-placement="bottom" data-original-title="Competitors" data-content="Yes it's true">We've got the lowest price</span>
                     </div>
                     <div class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="badge">10</span><span class="text">Competitors</span><span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="badge">10</span><span class="text topbar-detail-competitors" data-container="body" data-toggle="popover" data-trigger='manual' data-placement="bottom" data-original-title="Competitors" data-content="Confirm the lowest price on Lucky 7 Travel">Competitors</span><span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="#"><img src="img/tripcentral.png" alt="Logo"><span class="title">Tripcentral</span>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 topbar-controls text-right">
+            <div class="col-lg-3 topbar-controls text-right" data-container="body" data-toggle="popover" data-trigger='manual' data-placement="bottom" data-original-title="Social links" data-content="Let's socialize">
                 <a href="#" class="social"><img src="img/facebook.png" alt="">
                 </a>
                 <a href="#" class="social"><img src="img/twitter.png" alt="">
@@ -118,10 +118,12 @@
                 <a href="#" class="social"><img src="img/you-tube.png" alt="">
                 </a>
                 <span class="glyphicon glyphicon-cog"></span>
-                <span class="glyphicon glyphicon-question-sign"></span>
+                <span class="glyphicon glyphicon-question-sign" data-container="body" data-toggle="popover" data-trigger='manual' data-placement="bottom" data-original-title="First time here?" data-content="We've got a new toolbar to make your booking experience easier. Click on question sign and start the help tour topbar."></span>
                 <span class="glyphicon glyphicon-remove-circle"></span>
             </div>
         </div>
+        <div class="blur"></div>
+        <!--
         <div class="row topbar-help">
             <div class="col-lg-4 text-left">
                 <span><h4>The number of available additional offers, view the details offers and save money</h4></span>
@@ -135,9 +137,8 @@
             <div class="col-lg-12 text-center">
                 <span><h1>We've got a new toolbar to make your booking experience easier</h1></span>
             </div>
-        </div>
+        </div>-->
     </div>
-
 </body>
 
 </html>
