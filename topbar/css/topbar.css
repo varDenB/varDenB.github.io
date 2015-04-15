@@ -5,15 +5,18 @@
     color: #FFFFFF;
     height: 34px;
     font-size: 16px;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width:100%;
+    width: 100%;
     z-index: 1001;
 }
-.topbar-offers div, .topbar-answer div {
+
+.topbar-offers div,
+.topbar-answer div {
     display: inline-block;
 }
+
 .topbar-h-offer {
     vertical-align: middle;
     padding: 0 20px;
@@ -21,63 +24,79 @@
     border: 6px solid #CC6600;
     border-radius: 5px;
 }
+
 .topbar .dropdown-toggle {
     color: #FFFFFF;
 }
-.topbar-offers .divider{
-    margin:0;
+
+.topbar-offers .divider {
+    margin: 0;
 }
-.topbar-offers .profit{
+
+.topbar-offers .profit {
     font-size: 22px;
     background-color: #CC6600;
     color: #FFFFFF;
-    padding:3px;
+    padding: 3px;
 }
-.topbar-offers .text-offer{
-    padding:0 10px;
+
+.topbar-offers .text-offer {
+    padding: 0 10px;
 }
+
 .topbar .dropdown-toggle .text {
     padding-left: 5px;
 }
+
 .topbar .badge {
     background-color: #CC6600;
 }
+
 .topbar .dropdown {
     padding-left: 10px;
 }
+
 .topbar .dropdown-menu {
     background-color: #F2F2F2;
 }
-.topbar-offers .dropdown-menu a{
-    padding:0;
+
+.topbar-offers .dropdown-menu a {
+    padding: 0;
 }
-.topbar-completitors .dropdown-menu a{
-    padding:3px 5px;
+
+.topbar-completitors .dropdown-menu a {
+    padding: 3px 5px;
 }
-.topbar-completitors .divider{
-    margin:5px 0;
+
+.topbar-completitors .divider {
+    margin: 5px 0;
 }
-.topbar-offers .dropdown-menu{
-    padding:0;
+
+.topbar-offers .dropdown-menu {
+    padding: 0;
 }
+
 .topbar .dropdown-menu .title {
     padding-left: 5px;
 }
+
 .topbar-controls img {
     vertical-align: top;
     padding: 0 2px;
 }
+
 .topbar-controls span {
     cursor: pointer;
     font-size: 24px;
     padding: 4px 3px 0;
 }
+
 .topbar-answer {
     display: none;
     padding-top: 6px;
 }
-
 /* Help */
+
 .blur {
     display: none;
     position: fixed;
@@ -85,14 +104,33 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
-.remove-help{
+
+.remove-help {
     display: none;
     font-size: 40px;
     color: #ffffff;
-    position:absolute;
+    position: absolute;
     top: 40px;
     right: 0;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .topbar {
+        height: 68px;
+    }
+    .remove-help {
+        top: 70px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .topbar {
+        height: 102px;
+    }
+    .remove-help {
+        top: 105px;
+    }
 }
