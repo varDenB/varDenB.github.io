@@ -13,6 +13,7 @@ $(document).ready(function() {
 
 	$(".topbar .glyphicon-remove-circle").click(function() {
 		$(".topbar").css("display", "none");
+		$questionSign.popover('hide');
 	});
 	$questionSign.popover('show');
 
