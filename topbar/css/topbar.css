@@ -5,11 +5,11 @@
     color: #FFFFFF;
     height: 34px;
     font-size: 16px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1001;
+    right:0;
+    z-index: 1005;
 }
 .topbar-offers div, .topbar-answer div {
     display: inline-block;
@@ -98,6 +98,7 @@
 }
 .popover {
     text-align: center;
+    position: fixed;
 }
 .popover-title {
     font-size: 16px;
