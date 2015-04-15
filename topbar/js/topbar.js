@@ -1,13 +1,16 @@
 $(document).ready(function() {
-	
+
 	var $topbarhelp = $(".topbar-help");
-	var $questionSign=$('.glyphicon-question-sign');
-	var $hOffer=$('.topbar-h-offer');
-	var $detailOffer=$('.topbar-detail-offer');
-	var $hCompetitors=$('.topbar-h-competitors');
-	var $detailCompetitors=$('.topbar-detail-competitors');
-	var $controls=$('.topbar-controls');
-	var $popovers=[$hOffer,$detailOffer,$hCompetitors,$detailCompetitors,$controls];
+	var $questionSign = $('.topbar .glyphicon-question-sign');
+	var $hOffer = $('.topbar-h-offer');
+	var $detailOffer = $('.topbar-detail-offer');
+	var $hCompetitors = $('.topbar-h-competitors');
+	var $detailCompetitors = $('.topbar-detail-competitors');
+	var $socialLink = $('.topbar .social-popover');
+	var $controls = $('.topbar .glyphicon-cog');
+	var $popovers = [$hOffer, $detailOffer, $hCompetitors, $detailCompetitors,$socialLink, $controls];
+	var count = 0;
+	var autoShowPopovers;
 
 	$(".topbar .glyphicon-remove-circle").click(function() {
 		$(".topbar").css("display", "none");
@@ -16,17 +19,28 @@ $(document).ready(function() {
 
 	$(".topbar .glyphicon-question-sign").click(function() {
 
-		$('.topbar .blur').css('display','block');
+		$('.topbar .blur').css('display', 'block');
+		$('.topbar .remove-help').css('display', 'block');
 		$('.glyphicon-question-sign').popover('hide');
 
-		
-		setInterval(function() {
-			for(var i=0;i<$popovers.length;i+=1){
-			$popovers[i].popover('show');
-		}
-		},2000);	
-		
-		
+		$popovers[count].popover('show');
+		autoShowPopovers = setInterval(function() {
+			$popovers[count].popover('hide');
+			count += 1;
+			if (count === $popovers.length) {
+				count = 0;
+			}
+			$popovers[count].popover('show');
+		}, 4000);
+
+
+	});
+	$(".topbar .remove-help").click(function() {
+		$('.topbar .blur').css('display', 'none');
+		$('.topbar .remove-help').css('display', 'none');
+		$popovers[count].popover('hide');
+		count = 0;
+		clearInterval(autoShowPopovers);
 	});
 
 	setTimeout(function() {
