@@ -39,9 +39,6 @@
 .topbar .dropdown-toggle .text {
     padding-left: 5px;
 }
-.topbar .badge {
-    background-color: #CC6600;
-}
 .topbar .dropdown {
     padding-left: 10px;
 }
@@ -87,12 +84,21 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.3);
 }
-.remove-help {
+.popover-controls {
     display: none;
     font-size: 40px;
     color: #ffffff;
     position: absolute;
-    top: 40px;
+    top: 80px;
+    right: 0;
+    cursor: pointer;
+}
+.show-topbar{
+    display: none;
+    font-size: 20px;
+    color: #006699;
+    position: absolute;
+    top: 0;
     right: 0;
     cursor: pointer;
 }
