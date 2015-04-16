@@ -10,15 +10,17 @@ $(document).ready(function() {
 	var $popovers = [];
 	var count = 0;
 	var autoShowPopovers;
-	var widthScreen=$(window).width();
-	
-	if(widthScreen<=768){
+	var widthScreen = $(window).width();
+
+
+
+	if (widthScreen <= 768) {
 		$popovers = [$detailOffer, $detailCompetitors, $controls];
-	}else if(widthScreen>768 && widthScreen<=992){
+	} else if (widthScreen > 768 && widthScreen <= 992) {
 		$popovers = [$detailOffer, $hCompetitors, $detailCompetitors, $controls];
-	}else if(widthScreen>992 && widthScreen<=1200){
-		$popovers = [$hOffer,$detailOffer, $hCompetitors, $detailCompetitors, $controls];
-	}else{
+	} else if (widthScreen > 992 && widthScreen <= 1200) {
+		$popovers = [$hOffer, $detailOffer, $hCompetitors, $detailCompetitors, $controls];
+	} else {
 		$popovers = [$hOffer, $detailOffer, $hCompetitors, $detailCompetitors, $socialLink, $controls];
 	}
 
@@ -27,13 +29,12 @@ $(document).ready(function() {
 		$questionSign.popover('hide');
 		$(".show-topbar").show();
 	});
+
 	$(".show-topbar").click(function() {
 		$(".topbar").slideDown('slow');
 		$questionSign.popover('show');
 
 	});
-
-	$questionSign.popover('show');
 
 	$questionSign.click(function() {
 		$('.topbar .blur').css('display', 'block');
@@ -57,7 +58,7 @@ $(document).ready(function() {
 		count += 1;
 		if (count === $popovers.length) {
 			count = 0;
-			}
+		}
 		$popovers[count].popover('show');
 	});
 
@@ -65,8 +66,8 @@ $(document).ready(function() {
 		$popovers[count].popover('hide');
 		count -= 1;
 		if (count === -1) {
-			count = $popovers.length-1;
-			}
+			count = $popovers.length - 1;
+		}
 		$popovers[count].popover('show');
 	});
 
@@ -76,11 +77,15 @@ $(document).ready(function() {
 		$('.topbar .popover-controls').css('display', 'none');
 		$popovers[count].popover('hide');
 		count = 0;
-	//	clearInterval(autoShowPopovers);
+		//	clearInterval(autoShowPopovers);
 	});
 
 	setTimeout(function() {
 		$('.topbar-search').css("display", "none");
 		$('.topbar-answer').css("display", "block");
 	}, 5000);
+});
+
+$(window).load(function() {
+	$('.topbar .glyphicon-question-sign').popover('show');
 });
