@@ -1,10 +1,11 @@
 $(document).ready(function() {
-
+    $('body').css('padding-top','34px');
+    $('.navbar-fixed-top').css('top','34px');
     $('body').append('<div class="topbar">' +
         '<div class="row">' +
         '<div class="col-lg-4 col-md-5 col-sm-3 col-xs-4 topbar-offers text-left">' +
         '<div>' +
-        '<img src="img/logo.png" alt="Logo" width="34px" height="34px">' +
+        '<img src="imgtopbar/logo.png" alt="Logo" width="34px" height="34px">' +
         '</div>' +
         '<div class="topbar-h-offer" data-container="body" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-original-title="Offers" data-content="The number of available additional offers">' +
         '<span>5 additional offers available</span>' +
@@ -31,7 +32,7 @@ $(document).ready(function() {
         '</div>' +
         '<div class="col-lg-5 col-md-5 col-sm-7 col-xs-5 topbar-completitors text-center">' +
         '<div class="topbar-search">' +
-        '<span>Checking competitors prices...</span> <img src="img/ajax-loader.gif" alt="">' +
+        '<span>Checking competitors prices...</span> <img src="imgtopbar/ajax-loader.gif" alt="">' +
         '</div>' +
         '<div class="topbar-answer">' +
         '<div>' +
@@ -41,52 +42,52 @@ $(document).ready(function() {
         '<a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="text topbar-detail-competitors" data-container="body" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-original-title="Competitors" data-content="Confirm the lowest price on Lucky 7 Travel">Competitors</span><span class="caret"></span></a>' +
         '<ul class="dropdown-menu">' +
         '<li>' +
-        '<a href="#"><img src="img/tripcentral.png" alt="Logo"><span class="title">Tripcentral</span>' +
+        '<a href="#"><img src="imgtopbar/tripcentral.png" alt="Logo"><span class="title">Tripcentral</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/redtag.png" alt="Logo"><span class="title">Redtag</span>' +
+        '<a href="#"><img src="imgtopbar/redtag.png" alt="Logo"><span class="title">Redtag</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/sunwing.png" alt="Logo"><span class="title">Sunwing</span>' +
+        '<a href="#"><img src="imgtopbar/sunwing.png" alt="Logo"><span class="title">Sunwing</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/signature.png" alt="Logo"><span class="title">Signature vacations</span>' +
+        '<a href="#"><img src="imgtopbar/signature.png" alt="Logo"><span class="title">Signature vacations</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/sears.png" alt="Logo"><span class="title">Sears vacations</span>' +
+        '<a href="#"><img src="imgtopbar/sears.png" alt="Logo"><span class="title">Sears vacations</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/selloff.png" alt="Logo"><span class="title">Sell off vacations</span>' +
+        '<a href="#"><img src="imgtopbar/selloff.png" alt="Logo"><span class="title">Sell off vacations</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/flightcentre.png" alt="Logo"><span class="title">Flight centre</span>' +
+        '<a href="#"><img src="imgtopbar/flightcentre.png" alt="Logo"><span class="title">Flight centre</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/itravel.png" alt="Logo"><span class="title">Itravel2000</span>' +
+        '<a href="#"><img src="imgtopbar/itravel.png" alt="Logo"><span class="title">Itravel2000</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/realcanadian.png" alt="Logo"><span class="title">Real Canadian</span>' +
+        '<a href="#"><img src="imgtopbar/realcanadian.png" alt="Logo"><span class="title">Real Canadian</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
         '<li>' +
-        '<a href="#"><img src="img/marlin.png" alt="Logo"><span class="title">Markin travel</span>' +
+        '<a href="#"><img src="imgtopbar/marlin.png" alt="Logo"><span class="title">Markin travel</span>' +
         '</a>' +
         '</li>' +
         '<li class="divider"></li>' +
@@ -97,13 +98,13 @@ $(document).ready(function() {
         '</div>' +
         '</div>' +
         '<div class="col-lg-3 col-md-2 col-sm-2 col-xs-3 topbar-controls text-right">' +
-        '<a href="#" class="social"><img src="img/facebook.png" alt="">' +
+        '<a href="#" class="social"><img src="imgtopbar/facebook.png" alt="">' +
         '</a>' +
-        '<a href="#" class="social social-popover" data-container="body" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-original-title="Social links" data-content="Let socialize"><img src="img/twitter.png" alt="">' +
+        '<a href="#" class="social social-popover" data-container="body" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-original-title="Social links" data-content="Let socialize"><img src="imgtopbar/twitter.png" alt="">' +
         '</a>' +
-        '<a href="#" class="social"><img src="img/google+.png" alt="">' +
+        '<a href="#" class="social"><img src="imgtopbar/google+.png" alt="">' +
         '</a>' +
-        '<a href="#" class="social"><img src="img/you-tube.png" alt="">' +
+        '<a href="#" class="social"><img src="imgtopbar/you-tube.png" alt="">' +
         '</a>' +
         '<span class="glyphicon glyphicon-cog"></span>' +
         '<span class="glyphicon glyphicon-question-sign" data-container="body" data-toggle="popover" data-trigger="manual" data-placement="bottom" data-original-title="First time here?" data-content="We have got a new toolbar to make your booking experience easier. Click on question sign and start the help tour topbar."></span>' +
@@ -121,7 +122,7 @@ $(document).ready(function() {
         '<span class="glyphicon glyphicon-chevron-down"></span>' +
         '<span>Show Topbar</span>' +
         '</div>');
-
+    var $topbar=$('.topbar');
     var $questionSign = $('.topbar .glyphicon-question-sign');
     var $hOffer = $('.topbar-h-offer');
     var $detailOffer = $('.topbar-detail-offer');
@@ -144,15 +145,19 @@ $(document).ready(function() {
     }
 
     $(".topbar .glyphicon-remove-circle").click(function() {
-        $(".topbar").slideUp('slow');
+        $topbar.slideUp('slow');
         $questionSign.popover('hide');
+        $('body').css('padding-top','0px');
+        $('.navbar-fixed-top').css('top','0px');
         $(".show-topbar").show();
     });
 
     $(".show-topbar").click(function() {
-        $(".topbar").slideDown('slow');
+        $topbar.slideDown('slow');
         $questionSign.popover('show');
-
+        $(".show-topbar").hide();
+        $('body').css('padding-top','34px');
+        $('.navbar-fixed-top').css('top','34px');
     });
 
     $questionSign.click(function() {
