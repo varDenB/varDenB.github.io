@@ -15,8 +15,20 @@ angular.module('scheduleApp', ['firebase'])
       monday: {
         name: 'Monday',
         slots: {
+          0700: {
+            time: '7:00am',
+            booked: false
+          },
+          0800: {
+            time: '8:00am',
+            booked: false
+          },
           0900: {
             time: '9:00am',
+            booked: false
+          },
+          0100: {
+            time: '10:00am',
             booked: false
           },
           0110: {
@@ -28,8 +40,95 @@ angular.module('scheduleApp', ['firebase'])
       tuesday: {
         name: 'Tuesday',
         slots: {
+          0700: {
+            time: '7:00am',
+            booked: false
+          },
+          0800: {
+            time: '8:00am',
+            booked: false
+          },
           0900: {
             time: '9:00am',
+            booked: false
+          },
+          0100: {
+            time: '10:00am',
+            booked: false
+          },
+          0110: {
+            time: '11:00am',
+            booked: false
+          }
+        }
+      },
+      wednesday: {
+        name: 'Wednesday',
+        slots: {
+          0700: {
+            time: '7:00am',
+            booked: false
+          },
+          0800: {
+            time: '8:00am',
+            booked: false
+          },
+          0900: {
+            time: '9:00am',
+            booked: false
+          },
+          0100: {
+            time: '10:00am',
+            booked: false
+          },
+          0110: {
+            time: '11:00am',
+            booked: false
+          }
+        }
+      },
+      thursday: {
+        name: 'Thursday',
+        slots: {
+          0700: {
+            time: '7:00am',
+            booked: false
+          },
+          0100: {
+            time: '10:00am',
+            booked: false
+          },
+          0110: {
+            time: '11:00am',
+            booked: false
+          },
+          0800: {
+            time: '8:00am',
+            booked: false
+          },
+          0900: {
+            time: '9:00am',
+            booked: false
+          }
+        }
+      },
+      friday: {
+        name: 'Friday',
+        slots: {
+          0700: {
+            time: '7:00am',
+            booked: false
+          },
+          0800: {
+            time: '8:00am',
+            booked: false
+          },
+          0900: {
+            time: '9:00am',
+            booked: false
+          },
+          0100: {
+            time: '10:00am',
             booked: false
           },
           0110: {
