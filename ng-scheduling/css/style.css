@@ -1,0 +1,42 @@
+/* checkbox - слот с временем */
+.time-slot               {  }
+
+/* прячем checkbox - label остаётся */
+.time-slot input     {
+  display:none;
+}
+
+/* стилизация для label-ов */
+.time-slot label     {
+  padding:10px 20px;
+  color:#FFF;
+  cursor:pointer;
+  background:#EEE;
+  border-radius:5px;
+  transition:0.3s ease all;
+}
+
+/* если label был выбран */
+.time-slot input:checked ~ label {
+  background:#f2dede;
+  cursor:not-allowed;
+  animation:flashBooked 0.5s ease;
+}
+
+/* если label не выбран */
+.time-slot input:not(:checked) ~ label {
+  background:#6AB074;
+  animation:flashAvailable 0.5s ease;
+}
+
+/* анимация окраски слота в красный цвет */
+@keyframes flashBooked {
+  0%, 100%  { background:#f2dede; transform:scale(1); }
+  50%       { background:#F99090; transform:scale(1.5); }
+}
+
+/* анимация окраски слота в зелёный цвет */
+@keyframes flashAvailable {
+  0%, 100%  { background:#6AB074; transform:scale(1); }
+  50%       { background:rgb(119, 218, 78); transform:scale(1.5); }
+}
