@@ -2,11 +2,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Your Name Here - Simple</title>
+    <title>Частный детектив - Харьков</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta name="author" content="">  
+	    
     <link href="scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="scripts/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="scripts/fontawesome/css/font-awesome-ie7.min.css">
     <![endif]-->
 
-
+<link href="scripts/carousel/style.css" rel="stylesheet" type="text/css" />
 
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
@@ -36,7 +36,6 @@
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
 
     <link href="styles/custom.css" rel="stylesheet" type="text/css" />
-	<script src="email/validation.js" type="text/javascript"></script>
 </head>
 <body id="pageBody">
 
@@ -48,8 +47,8 @@
                 <div class="span12">
 
                     <div id="divLogo" class="pull-left">
-                        <a href="index.html" id="divSiteTitle">Your Name Here</a><br />
-                        <a href="index.html" id="divTagLine">Your Tag Line Here</a>
+                        <a href="index.html" id="divSiteTitle">Частный детектив</a><br />
+                        <a href="index.html" id="divTagLine">город Харьков и область</a>
                     </div>
 
                     <div id="divMenuRight" class="pull-right">
@@ -59,27 +58,9 @@
                         </button>
                         <div class="nav-collapse collapse">
                             <ul class="nav nav-pills ddmenu">
-                                <li class="dropdown"><a href="index.html">Home</a></li>
-								<li class="dropdown"><a href="about.html">About</a></li>
-                                <li class="dropdown">
-                                    <a href="page.html" class="dropdown-toggle">Page <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                            <li><a href="full.html">Full Page</a></li>
-                            <li><a href="2-column.html">Two Column</a></li>
-                            <li><a href="3-column.html">Three Column</a></li>
-							<li><a href="../documentation/index.html">Documentation</a></li>
-							<li class="dropdown">
-                            <a href="#" class="dropdown-toggle">Dropdown Item &nbsp;&raquo;</a>
-                            <ul class="dropdown-menu sub-menu">
-                            <li><a href="#">Dropdown Item</a></li>
-                            <li><a href="#">Dropdown Item</a></li>
-                            <li><a href="#">Dropdown Item</a></li>
-                            </ul>
-                            </li>
-                            </ul>
-                                </li>
-                                <li class="dropdown"><a href="gallery.html">Gallery</a></li>
-                                <li class="dropdown active"><a href="contact.php">Contact</a></li>
+                                <li class="dropdown active"><a href="index.html">Главная</a></li>
+								<li class="dropdown"><a href="services.html">Услуги</a></li>
+                                <li class="dropdown"><a href="contact.html">Контакты</a></li>
                             </ul>
                         </div>
                     </div>
@@ -92,74 +73,79 @@
     </div>
 </div>
 
+<div id="decorative1" style="position:relative">
+    <div class="container">
+
+        <div class="divPanel headerArea">
+            <div class="row-fluid">
+                <div class="span12">
+
+                        <div id="headerSeparator"></div>
+
+                        <div id="divHeaderText" class="page-content">
+                            <!--
+                            <div id="divHeaderLine1">Частный детектив в Харькове</div><br />
+                            <div id="divHeaderLine2">Мы работаем для Вашего спокойствия!</div><br />
+                            -->
+                        </div>
+
+                        <div id="headerSeparator2"></div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 <div id="contentOuterSeparator"></div>
 
 <div class="container">
 
     <div class="divPanel page-content">
 
-        <div class="breadcrumbs">
-                <a href="index.html">Home</a> &nbsp;/&nbsp; <span>Contact Us</span>
-            </div> 
-
         <div class="row-fluid">
-                <div class="span8" id="divMain">
 
-                    <h1>Contact Us</h1>
-                   	<h3 style="color:#FF6633;"><?php echo $_GET[msg];?></h3>
-					<hr>
-			<!--Start Contact form -->		                                                
-<form name="enq" method="post" action="email/" onsubmit="return validation();">
-  <fieldset>
-    
-	<input type="text" name="name" id="name" value=""  class="input-block-level" placeholder="Name" />
-    <input type="text" name="email" id="email" value="" class="input-block-level" placeholder="Email" />
-    <textarea rows="11" name="message" id="message" class="input-block-level" placeholder="Comments"></textarea>
-    <div class="actions">
-	<input type="submit" value="Send Your Message" name="submit" id="submitButton" class="btn btn-info pull-right" title="Click here to submit your message!" />
-	</div>
-	
-	</fieldset>
-</form>  				 
-			<!--End Contact form -->											 
-                </div>
-				
-			<!--Edit Sidebar Content here-->	
-                <div class="span4 sidebar">
+                <div class="span12" id="divMain">
 
-                    <div class="sidebox">
-                        <h3 class="sidebox-title">Contact Information</h3>
-                    <p>
-                        <address><strong>Your Company, Inc.</strong><br />
-                        Address<br />
-                        City, State, Zip<br />
-                        <abbr title="Phone">P:</abbr> (123) 456-7890</address> 
-                        <address>  <strong>Email</strong><br />
-                        <a href="mailto:#">first.last@gmail.com</a></address>  
-                    </p>     
-                     
-					 <!-- Start Side Categories -->
-        <h4 class="sidebox-title">Sidebar Categories</h4>
-        <ul>
-          <li><a href="#">Quisque diam lorem sectetuer adipiscing</a></li>
-          <li><a href="#">Interdum vitae, adipiscing dapibus ac</a></li>
-          <li><a href="#">Scelerisque ipsum auctor vitae, pede</a></li>
-          <li><a href="#">Donec eget iaculis lacinia non erat</a></li>
-          <li><a href="#">Lacinia dictum elementum velit fermentum</a></li>
-          <li><a href="#">Donec in velit vel ipsum auctor pulvinar</a></li>
-        </ul>
-					<!-- End Side Categories -->
-                    					
+                    <h1>Добро пожаловать</h1>
+
+                    <h4>Время от времени многим бывают нужны услуги частого детектива.  Сейчас этим уже никого не удивишь, тем более, что в Украине сложная криминогенная обстановка. В мире уже давно пользуются услугами детектива частным образом, полагая, что это наилучший способ быстро получить необходимую информацию.Частный детектив работает не только на территории  Харькова и Харьковской области, но и на территории всей Украины. Это позволяет оперативно решать многие вопросы на расстоянии, но в случае необходимости  частный сыщик может выезжать в другие страны.
+                    </h4>
+
+                    <hr style="margin:45px 0 35px" />
+
+                    <div class="lead">
+                        <h2>Могу помочь Вам в таких случаях:</h2>
                     </div>
-					
-					
-                    
-                </div>
-			<!--/End Sidebar Content-->
-				
-				
-            </div>			
+                    <br />
 
+                    <div class="list_carousel responsive">
+                        
+                        <ul id="list_photos">
+                            <li><a href="services.html"><img src="images/car_izmena.jpg" class="img-polaroid">  </a></li>
+                            <li><a href="services.html"><img src="images/car_photovideo.jpg" class="img-polaroid">  </a></li>
+                            <li><a href="services.html"><img src="images/car_proslushka.jpg" class="img-polaroid">  </a></li>
+                            <li><a href="services.html"><img src="images/car_rozuck.jpg" class="img-polaroid">  </a></li>
+							<li><a href="services.html"><img src="images/car_sbor.jpg" class="img-polaroid"> </a> </li>          
+                            <li><a href="services.html"><img src="images/car_kontrol.jpg" class="img-polaroid"> </a> </li>
+                            <li><a href="services.html"><img src="images/car_deti.jpg" class="img-polaroid">  </a></li>
+                            <li><a href="services.html"><img src="images/car_auto.jpg" class="img-polaroid">  </a></li>
+							<li><a href="services.html"><img src="images/car_zakon.jpg" class="img-polaroid"> </a> </li>
+                        </ul>
+                    </div> 
+					
+                    <hr style="margin:45px 0 35px" />
+                    
+                    <div class="lead">
+                    	<h2>Дела ведутся в соответствии с негласными правилами:<br /></h2>
+                        <h3>Частный детектив ведет расследование строго конфиденциально.<br />
+						 Ваша личность, предоставленная информация и полученные результаты останутся исключительно между вами и частным детективом. <br />
+						Предоставляю только проверенную информацию и достоверные факты.</h3>
+                    </div>
+                </div>
+            </div>
         <div id="footerInnerSeparator"></div>
     </div>
 
@@ -223,23 +209,22 @@
                     <ul id="contact-info">
                     <li>                                    
                         <i class="general foundicon-phone icon"></i>
-                        <span class="field">Phone:</span>
+                        <span class="field">Телефон:</span>
                         <br />
-                        (123) 456 7890 / 456 7891                                                                      
+                        +38 (050) 9777909                                                      
                     </li>
                     <li>
                         <i class="general foundicon-mail icon"></i>
                         <span class="field">Email:</span>
                         <br />
-                        <a href="mailto:info@yourdomain.com" title="Email">info@yourdomain.com</a>
+                        <a href="mailto:nergesh_25@mail.ru" title="Email">nergesh_25@mail.ru</a>
                     </li>
                     <li>
                         <i class="general foundicon-home icon" style="margin-bottom:50px"></i>
-                        <span class="field">Address:</span>
+                        <span class="field">Адрес:</span>
                         <br />
-                        123 Street<br />
-                        12345 City, State<br />
-                        Country
+                        г. Харьков<br />
+                        Украина<br />
                     </li>
                     </ul>
 
@@ -274,7 +259,7 @@
 <script src="scripts/default.js" type="text/javascript"></script>
 
 
-
+<script src="scripts/carousel/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script><script type="text/javascript">$('#list_photos').carouFredSel({ responsive: true, width: '100%', scroll: 2, items: {width: 320,visible: {min: 2, max: 6}} });</script>
 
 
 </body>
