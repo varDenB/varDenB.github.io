@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
+<rss version="2.0">
+  <channel>
+    <title />
+    <link>http://detektive-kharkov.hol.es</link>
+    <description />
+    <item>
+      <guid>http://detektive-kharkov.hol.es/</guid>
+      <title>Добро пожаловать</title>
+      <link>http://detektive-kharkov.hol.es/</link>
+      <description>Частный детектив город Харьков и область</description>
+    </item>
+    <item>
+      <guid>http://detektive-kharkov.hol.es/index.html</guid>
+      <title>Добро пожаловать</title>
+      <link>http://detektive-kharkov.hol.es/index.html</link>
+      <description>Частный детектив город Харьков и область</description>
+    </item>
+    <item>
+      <guid>http://detektive-kharkov.hol.es/contact.html</guid>
+      <title>Контакты</title>
+      <link>http://detektive-kharkov.hol.es/contact.html</link>
+      <description>Частный детектив город Харьков и область</description>
+    </item>
+    <item>
+      <guid>http://detektive-kharkov.hol.es/services.html</guid>
+      <title>Услуги</title>
+      <link>http://detektive-kharkov.hol.es/services.html</link>
+      <description>Частный детектив город Харьков и область</description>
+    </item>
+  </channel>
+</rss>
+<!--<guid value="505b5e24-dab9-4b18-b3cc-385a80ff87e2" />-->
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
