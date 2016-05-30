@@ -17,7 +17,7 @@
 				$(".preloader-right").addClass("slide-right");
 				shuffleNode.shuffle('shuffle', 'all');
 				$('.hi .detail')
-					.typeTo("I'm Denis. Frontend (web) developer based in Kharkiv, Ukraine. When I'm not coding, i like to play football and go to the gym.");
+					.typeTo("I'm Denis. Frontend (web) developer based in Kharkiv, Ukraine. When I'm not coding, I like to play football and go to the gym.");
 			});
 		});
 
